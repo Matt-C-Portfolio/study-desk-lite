@@ -1,0 +1,329 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lecture question bank — Study Desk Lite</title>
+<style>
+        body{font:16px/1.6 system-ui,sans-serif;margin:0;background:#f5f4ef;color:#132e4b}
+        main{max-width:960px;margin:32px auto;padding:0 24px}h1{font-size:32px;line-height:1.2}h2{font-size:23px;line-height:1.3}
+        h3{font-size:17px;border-bottom:2px solid #afd2e7;padding-bottom:8px;margin-top:30px}
+        section{background:#fff;padding:28px;margin:24px 0;border:1px solid #d1dbe0;border-radius:10px}
+        article{padding:14px 0;border-bottom:1px solid #e6eaed}article:last-child{border:0}
+        .id{font:12px monospace;color:#52687b}p{margin:8px 0}a{color:#125d8c}nav{display:grid;gap:5px}
+        details{margin:12px 0;background:#f3f7fa;padding:10px 14px}summary{cursor:pointer;font-weight:600}
+        .note,.source{font-size:13px;color:#435e72}.question{white-space:pre-wrap}li{margin:5px 0}
+        .evidence{font-size:14px;max-height:380px;overflow:auto}blockquote{margin:12px 0;border-left:3px solid #8dbdd8;padding-left:14px}
+        @media print{body{background:white;color:black}main{margin:0;max-width:none}section{border:0;break-before:page;padding:0}article{break-inside:avoid}nav{display:none}.evidence{max-height:none;overflow:visible}}
+        </style><main>
+<h1>Lecture question bank</h1>
+<p>10 lectures · 4 categories · 3 questions per category · 120 questions</p>
+<p class="note">Standalone evaluation set. The numbered lecture groups organize the questions; no lecture selection is needed to ask them.</p>
+<nav><a href="#lecture-1">6.00 — Lecture 1: Computer Science and Python Introduction</a><a href="#lecture-2">6.034 — Lecture 1: Introduction and Scope</a><a href="#lecture-3">6.034 — Lecture 4: Search: Depth-First, Hill Climbing, Beam</a><a href="#lecture-4">6.034 — Lecture 5: Search: Optimal, Branch and Bound, A*</a><a href="#lecture-5">6.034 — Lecture 6: Search: Games, Minimax, and Alpha-Beta</a><a href="#lecture-6">6.034 — Lecture 10: Introduction to Learning, Nearest Neighbors</a><a href="#lecture-7">6.034 — Lecture 11: Learning: Identification Trees, Disorder</a><a href="#lecture-8">6.034 — Lecture 12A: Neural Nets</a><a href="#lecture-9">6.034 — Lecture 12B: Deep Neural Nets</a><a href="#lecture-10">6.034 — Lecture 16: Learning: Support Vector Machines</a></nav>
+<section id="lecture-1"><h2>6.00 — Lecture 1: Computer Science and Python Introduction</h2>
+<p class="source">Eric Grimson and John Guttag · MIT OpenCourseWare · <a href="https://www.youtube.com/watch?v=k6U-i4gXkLM">Video</a> · <a href="https://ocw.mit.edu/courses/6-00-introduction-to-computer-science-and-programming-fall-2008/">Course source</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+<h3>Lecture details</h3>
+<article id="L01-1-1"><span class="id">L01-1-1</span><p class="question">In Grimson&#x27;s 2008 introduction to Python, what stopping test and update rule does the square-root recipe use?</p>
+</article>
+<article id="L01-1-2"><span class="id">L01-1-2</span><p class="question">In the 2008 Python introduction, how does Grimson distinguish the string &#x27;52&#x27; from the number 52?</p>
+</article>
+<article id="L01-1-3"><span class="id">L01-1-3</span><p class="question">In Grimson&#x27;s stored-program computer explanation, what does the program counter point to, and how can a test change execution?</p>
+</article>
+<h3>Understanding</h3>
+<article id="L01-2-1"><span class="id">L01-2-1</span><p class="question">Why does a definition of a square root not, by itself, provide a procedure for computing one? Explain using declarative and imperative knowledge.</p>
+</article>
+<article id="L01-2-2"><span class="id">L01-2-2</span><p class="question">Why can a program pass a syntax check and still give the wrong answer? Use Grimson&#x27;s distinction between syntax and semantics.</p>
+</article>
+<article id="L01-2-3"><span class="id">L01-2-3</span><p class="question">Why does Python allow &#x27;3&#x27; * 3 but reject &#x27;3&#x27; * &#x27;3&#x27;, according to the operator discussion in the introductory lecture?</p>
+</article>
+<h3>Application</h3>
+<article id="L01-3-1"><span class="id">L01-3-1</span><p class="question">Use the lecture&#x27;s square-root recipe with x = 9 and g = 2. Stop only when |g*g - x| &lt; 0.01. Should it stop now, and what is the next guess?</p>
+</article>
+<article id="L01-3-2"><span class="id">L01-3-2</span><p class="question">Consider these expressions separately: &#x27;52&#x27; + &#x27;7&#x27;, 52 + 7, and &#x27;52&#x27; * &#x27;7&#x27;. What does each produce or why does it fail?</p>
+</article>
+<article id="L01-3-3"><span class="id">L01-3-3</span><p class="question">Use the Python 2-style integer division demonstrated in the 2008 lecture, with no future-division import: what are 7 / 2 and 7 / 2.0, and why do they differ?</p>
+</article>
+<h3>Connections</h3>
+<article id="L01-4-1"><span class="id">L01-4-1</span><p class="question">Connect Grimson&#x27;s idea of an executable recipe with Winston&#x27;s farmer–fox–goose–grain state graph. Why does representing the legal states still leave an algorithmic task to perform?</p>
+</article>
+<article id="L01-4-2"><span class="id">L01-4-2</span><p class="question">How does the queue-based depth-first search procedure illustrate the sequence, tests and changing control flow described in the introductory programming lecture?</p>
+</article>
+<article id="L01-4-3"><span class="id">L01-4-3</span><p class="question">Relate the Python lecture&#x27;s emphasis on data representation to the nearest-neighbor lecture&#x27;s magazine example. Why can a valid numeric representation still lead to an unhelpful comparison?</p>
+</article>
+</section>
+<section id="lecture-2"><h2>6.034 — Lecture 1: Introduction and Scope</h2>
+<p class="source">Patrick Henry Winston · MIT OpenCourseWare · <a href="https://www.youtube.com/watch?v=TjZBTDzGeGg">Video</a> · <a href="https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-1-introduction-and-scope/">Course source</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+<h3>Lecture details</h3>
+<article id="L02-1-1"><span class="id">L02-1-1</span><p class="question">In Winston&#x27;s Introduction and Scope lecture, which three activities does his broad definition of artificial intelligence target?</p>
+</article>
+<article id="L02-1-2"><span class="id">L02-1-2</span><p class="question">Which everyday identification example does Winston use to introduce generate-and-test, and what plays the role of the generator?</p>
+</article>
+<article id="L02-1-3"><span class="id">L02-1-3</span><p class="question">For the farmer, fox, goose and grain example, how many bank assignments exist before constraints are applied, and why are some missing from the legal-state graph?</p>
+</article>
+<h3>Understanding</h3>
+<article id="L02-2-1"><span class="id">L02-2-1</span><p class="question">What does Winston mean by the Rumpelstiltskin Principle, and why does giving generate-and-test a name help?</p>
+</article>
+<article id="L02-2-2"><span class="id">L02-2-2</span><p class="question">Why is a state graph a more useful representation of the river-crossing puzzle than a picture of the farmer alone?</p>
+</article>
+<article id="L02-2-3"><span class="id">L02-2-3</span><p class="question">Why does Winston describe thinking and perception as a loop rather than completely separate abilities in the imagination demonstration?</p>
+</article>
+<h3>Application</h3>
+<article id="L02-3-1"><span class="id">L02-3-1</span><p class="question">A river puzzle has a farmer and four independently positioned possessions, each on either bank. Before checking any safety or boat rules, how many location assignments must a complete enumeration consider? Explain the count.</p>
+</article>
+<article id="L02-3-2"><span class="id">L02-3-2</span><p class="question">A tree-identification program repeatedly tests the same candidate and keeps proposing conifers after being told the leaf is deciduous. What two generator improvements follow from Winston&#x27;s discussion?</p>
+</article>
+<article id="L02-3-3"><span class="id">L02-3-3</span><p class="question">Suppose a system has a visual memory of Alice giving a ball to Bob and is asked who has the ball afterward. Describe how Winston&#x27;s imagine-then-inspect approach could answer, without claiming the system must have memorized that exact question.</p>
+</article>
+<h3>Connections</h3>
+<article id="L02-4-1"><span class="id">L02-4-1</span><p class="question">Winston says representations expose constraints that enable algorithms. How does the support-vector-machine lecture put that idea into practice with a separating street?</p>
+</article>
+<article id="L02-4-2"><span class="id">L02-4-2</span><p class="question">Compare identifying a leaf by generate-and-test with finding a relevant magazine article by nearest-neighbor comparison. What supplies the candidates and what supplies the comparison in each?</p>
+</article>
+<article id="L02-4-3"><span class="id">L02-4-3</span><p class="question">How does the power of symbolic names in Introduction and Scope relate to turning an identification tree into if-then rules?</p>
+</article>
+</section>
+<section id="lecture-3"><h2>6.034 — Lecture 4: Search: Depth-First, Hill Climbing, Beam</h2>
+<p class="source">Patrick Henry Winston · MIT OpenCourseWare · <a href="https://www.youtube.com/watch?v=j1H3jAAGlEA">Video</a> · <a href="https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-4-search-depth-first-hill-climbing-beam/">Course source</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+<h3>Lecture details</h3>
+<article id="L03-1-1"><span class="id">L03-1-1</span><p class="question">In the queue implementation of search, where are new paths inserted for depth-first search, and what one change produces breadth-first search?</p>
+</article>
+<article id="L03-1-2"><span class="id">L03-1-2</span><p class="question">In Winston&#x27;s beam-search demonstration, what beam width is used and what does that width limit?</p>
+</article>
+<article id="L03-1-3"><span class="id">L03-1-3</span><p class="question">What three terrain problems does Winston describe for continuous hill climbing near the end of the basic-search lecture?</p>
+</article>
+<h3>Understanding</h3>
+<article id="L03-2-1"><span class="id">L03-2-1</span><p class="question">Why does an extended list save work when different search paths reach the same node?</p>
+</article>
+<article id="L03-2-2"><span class="id">L03-2-2</span><p class="question">In this lecture&#x27;s hill-climbing search, why does preferring a successor closer to the goal not by itself establish that the complete route is shortest?</p>
+</article>
+<article id="L03-2-3"><span class="id">L03-2-3</span><p class="question">Why does a width-two beam differ from simply allowing two children from every expanded parent?</p>
+</article>
+<h3>Application</h3>
+<article id="L03-3-1"><span class="id">L03-3-1</span><p class="question">The queue is [S-A, S-B]. Expanding its first path S-A produces S-A-C followed by S-A-D. There are no loops or goal nodes. What is the resulting queue for depth-first search and for breadth-first search?</p>
+</article>
+<article id="L03-3-2"><span class="id">L03-3-2</span><p class="question">In the lecture&#x27;s front-sorted hill-climbing queue, expanding S-A generates S-A-C with heuristic 7 and S-A-D with heuristic 2; S-B is already waiting. Smaller estimates are better. What queue order results, and which path is considered next?</p>
+</article>
+<article id="L03-3-3"><span class="id">L03-3-3</span><p class="question">At one level, a beam search has four candidate paths ending at A, B, C and D with estimated remaining distances 8, 3, 5 and 1. With beam width two and smaller estimates preferred, which survive? Can a discarded path still belong to the actual best solution?</p>
+</article>
+<h3>Connections</h3>
+<article id="L03-4-1"><span class="id">L03-4-1</span><p class="question">Contrast breadth-first search&#x27;s level ordering with branch-and-bound&#x27;s accumulated-distance ordering. Why can fewest edges and lowest route cost be different goals?</p>
+</article>
+<article id="L03-4-2"><span class="id">L03-4-2</span><p class="question">How does the neural-net lecture adapt the continuous hill-climbing idea, and what extra information does it use instead of just trying a few directions?</p>
+</article>
+<article id="L03-4-3"><span class="id">L03-4-3</span><p class="question">How does the extended-list idea implement the nonredundancy property recommended for generate-and-test?</p>
+</article>
+</section>
+<section id="lecture-4"><h2>6.034 — Lecture 5: Search: Optimal, Branch and Bound, A*</h2>
+<p class="source">Patrick Henry Winston · MIT OpenCourseWare · <a href="https://www.youtube.com/watch?v=gGQ-vAmdAOI">Video</a> · <a href="https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-5-search-optimal-branch-and-bound-a/">Course source</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+<h3>Lecture details</h3>
+<article id="L04-1-1"><span class="id">L04-1-1</span><p class="question">In the optimal-search lecture&#x27;s oracle example, what route and total length does Juana supply?</p>
+</article>
+<article id="L04-1-2"><span class="id">L04-1-2</span><p class="question">In the first Cambridge-map comparison in the optimal-search lecture, how does adding an extended list change the number of branch-and-bound extensions?</p>
+</article>
+<article id="L04-1-3"><span class="id">L04-1-3</span><p class="question">What stronger heuristic property does Winston introduce after showing that an admissible heuristic can fail with his no-reopening extended-list implementation?</p>
+</article>
+<h3>Understanding</h3>
+<article id="L04-2-1"><span class="id">L04-2-1</span><p class="question">For branch-and-bound with nonnegative edge costs, why can it stop when the least-cost path removed from its queue already reaches the goal, but not necessarily when a goal path is first generated?</p>
+</article>
+<article id="L04-2-2"><span class="id">L04-2-2</span><p class="question">Why does adding an admissible estimate of distance remaining to accumulated route cost help guide an optimal search?</p>
+</article>
+<article id="L04-2-3"><span class="id">L04-2-3</span><p class="question">Why can an admissible but inconsistent heuristic cause the lecture&#x27;s extended-list A* implementation to miss a shorter route?</p>
+</article>
+<h3>Application</h3>
+<article id="L04-3-1"><span class="id">L04-3-1</span><p class="question">Three queued routes have (cost so far g, estimated remainder h) values A=(4,6), B=(7,1), C=(3,8). Which is chosen using g+h, and which using g alone?</p>
+</article>
+<article id="L04-3-2"><span class="id">L04-3-2</span><p class="question">A complete route costs 11. Two unfinished routes have accumulated costs 12 and 11, and every remaining edge has nonnegative cost. If we need any shortest route, can both be pruned? Could the second still tie the incumbent?</p>
+</article>
+<article id="L04-3-3"><span class="id">L04-3-3</span><p class="question">For an undirected edge X-Y of cost 2, let true remaining distances be 5 from X and 3 from Y, and estimates be h(X)=4 and h(Y)=0. Are these estimates admissible? Do they satisfy the lecture&#x27;s consistency test on this edge?</p>
+</article>
+<h3>Connections</h3>
+<article id="L04-4-1"><span class="id">L04-4-1</span><p class="question">Beam search and A* both use heuristic information. Why does their use of that information give different protection against throwing away the best route?</p>
+</article>
+<article id="L04-4-2"><span class="id">L04-4-2</span><p class="question">What does the dead horse principle have in common in branch-and-bound and alpha-beta pruning, and what is the bound about in each case?</p>
+</article>
+<article id="L04-4-3"><span class="id">L04-4-3</span><p class="question">Compare the role of distance in heuristic route search with its role in nearest-neighbor classification. Why is an airline-distance estimate not interchangeable with a feature-vector similarity score?</p>
+</article>
+</section>
+<section id="lecture-5"><h2>6.034 — Lecture 6: Search: Games, Minimax, and Alpha-Beta</h2>
+<p class="source">Patrick Henry Winston · MIT OpenCourseWare · <a href="https://www.youtube.com/watch?v=STjW3eH0Cik">Video</a> · <a href="https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-6-search-games-minimax-and-alpha-beta/">Course source</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+<h3>Lecture details</h3>
+<article id="L05-1-1"><span class="id">L05-1-1</span><p class="question">In the games lecture, what does a static board evaluator inspect, and which two chess features are mentioned as examples?</p>
+</article>
+<article id="L05-1-2"><span class="id">L05-1-2</span><p class="question">In Winston&#x27;s small minimax example, the minimizing branches have leaves (2,7) and (1,8). What values back up to those branches, and what value reaches the maximizing root?</p>
+</article>
+<article id="L05-1-3"><span class="id">L05-1-3</span><p class="question">What does the games lecture call the strategy of completing shallower searches before deeper ones so a move is available when time expires?</p>
+</article>
+<h3>Understanding</h3>
+<article id="L05-2-1"><span class="id">L05-2-1</span><p class="question">Why does minimax not simply choose the largest leaf value anywhere in the game tree?</p>
+</article>
+<article id="L05-2-2"><span class="id">L05-2-2</span><p class="question">Does alpha-beta pruning approximate minimax or change its backed-up value? Explain what work it can avoid.</p>
+</article>
+<article id="L05-2-3"><span class="id">L05-2-3</span><p class="question">Why is progressive deepening useful when a game-playing program has a fixed time limit and the branching factor varies?</p>
+</article>
+<h3>Application</h3>
+<article id="L05-3-1"><span class="id">L05-3-1</span><p class="question">A MAX root has three MIN children A, B and C. Their leaf scores are A:[4,9], B:[2,8], C:[6,7]. What scores back up, and which move should MAX choose?</p>
+</article>
+<article id="L05-3-2"><span class="id">L05-3-2</span><p class="question">A MAX root has already completed one MIN branch with value 5. In a second MIN branch, the first evaluated leaf is 3 and the other leaf is unknown. Can alpha-beta skip that unknown leaf, and why?</p>
+</article>
+<article id="L05-3-3"><span class="id">L05-3-3</span><p class="question">For a uniform game tree with branching factor 4 and depth 6, how many leaf evaluations does plain minimax require? Using the lecture&#x27;s ideal-order approximation 2*b^(d/2), what is the alpha-beta estimate?</p>
+</article>
+<h3>Connections</h3>
+<article id="L05-4-1"><span class="id">L05-4-1</span><p class="question">Compare the conditions for stopping a route search and stopping a depth-limited game search. How do branch-and-bound and minimax each decide that one candidate is better?</p>
+</article>
+<article id="L05-4-2"><span class="id">L05-4-2</span><p class="question">Both beam search and alpha-beta pruning discard branches. Why is it wrong to describe both as sacrificing answer quality merely to search faster?</p>
+</article>
+<article id="L05-4-3"><span class="id">L05-4-3</span><p class="question">A minimax game tree and an identification tree are both trees. What do their internal nodes, branches and results represent, and why should their traversal rules differ?</p>
+</article>
+</section>
+<section id="lecture-6"><h2>6.034 — Lecture 10: Introduction to Learning, Nearest Neighbors</h2>
+<p class="source">Patrick Henry Winston · MIT OpenCourseWare · <a href="https://www.youtube.com/watch?v=09mb78oiPkA">Video</a> · <a href="https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-10-introduction-to-learning-nearest-neighbors/">Course source</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+<h3>Lecture details</h3>
+<article id="L06-1-1"><span class="id">L06-1-1</span><p class="question">What two measurements represent electrical outlet covers in the nearest-neighbor lecture&#x27;s introductory example?</p>
+</article>
+<article id="L06-1-2"><span class="id">L06-1-2</span><p class="question">Which magazines and example word dimensions does Winston use to illustrate document retrieval with nearest-neighbor ideas?</p>
+</article>
+<article id="L06-1-3"><span class="id">L06-1-3</span><p class="question">In the robot-arm learning example, what motor outputs are recorded alongside joint positions, velocities and accelerations?</p>
+</article>
+<h3>Understanding</h3>
+<article id="L06-2-1"><span class="id">L06-2-1</span><p class="question">Why does comparing raw word-count vectors by Euclidean distance risk retrieving the wrong articles for a short query, and how does the lecture address it?</p>
+</article>
+<article id="L06-2-2"><span class="id">L06-2-2</span><p class="question">How does dividing each feature by its standard deviation address one nearest-neighbor problem, and what problem does it leave unresolved?</p>
+</article>
+<article id="L06-2-3"><span class="id">L06-2-3</span><p class="question">What does the nearest-neighbor lecture&#x27;s cake-without-flour warning mean for a prediction task?</p>
+</article>
+<h3>Application</h3>
+<article id="L06-3-1"><span class="id">L06-3-1</span><p class="question">A one-nearest-neighbor classifier uses Euclidean distance. Its only stored examples are A at (0,0) and B at (4,0). What label does query (3,1) receive? Show the two distances.</p>
+</article>
+<article id="L06-3-2"><span class="id">L06-3-2</span><p class="question">For word-count vectors q=(1,1), A=(10,10) and B=(1,0), which article wins under Euclidean distance and which under cosine similarity? Explain the disagreement.</p>
+</article>
+<article id="L06-3-3"><span class="id">L06-3-3</span><p class="question">Two examples differ by 200 units on feature x and 2 units on feature y. Training-set standard deviations are sigma_x=100 and sigma_y=1. After the lecture&#x27;s scaling, what are the differences and Euclidean distance? What changes about their relative contributions?</p>
+</article>
+<h3>Connections</h3>
+<article id="L06-4-1"><span class="id">L06-4-1</span><p class="question">Why is the identification-tree approach a useful alternative to the nearest-neighbor setup when inputs include symbolic tests and tests have different costs?</p>
+</article>
+<article id="L06-4-2"><span class="id">L06-4-2</span><p class="question">Connect the robot-arm lookup example to Grimson&#x27;s distinction between knowing a mathematical description and having a workable computational recipe. Why might recorded experience be useful even when equations of motion exist?</p>
+</article>
+<article id="L06-4-3"><span class="id">L06-4-3</span><p class="question">Contrast using stored motion examples to control a robot arm with using an autocoder&#x27;s small hidden layer to represent inputs. How is information reused in these two approaches?</p>
+</article>
+</section>
+<section id="lecture-7"><h2>6.034 — Lecture 11: Learning: Identification Trees, Disorder</h2>
+<p class="source">Patrick Henry Winston · MIT OpenCourseWare · <a href="https://www.youtube.com/watch?v=SXBG3RGr_Rc">Video</a> · <a href="https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-11-learning-identification-trees-disorder/">Course source</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+<h3>Lecture details</h3>
+<article id="L07-1-1"><span class="id">L07-1-1</span><p class="question">What four observable characteristics are used as candidate tests in Winston&#x27;s vampire identification example?</p>
+</article>
+<article id="L07-1-2"><span class="id">L07-1-2</span><p class="question">Which test does the vampire example select first under weighted disorder, and what weighted disorder does the lecture give it?</p>
+</article>
+<article id="L07-1-3"><span class="id">L07-1-3</span><p class="question">When the lecture converts an identification tree into rules, which part of the tree supplies one initial rule?</p>
+</article>
+<h3>Understanding</h3>
+<article id="L07-2-1"><span class="id">L07-2-1</span><p class="question">Why might an identification tree use a measurement on one branch but never perform it on another?</p>
+</article>
+<article id="L07-2-2"><span class="id">L07-2-2</span><p class="question">Why does the lecture weight each branch&#x27;s disorder by the fraction of samples entering that branch instead of adding all branch disorders equally?</p>
+</article>
+<article id="L07-2-3"><span class="id">L07-2-3</span><p class="question">For an identification tree using one numeric feature threshold at a time, why are boundaries axis-aligned, and why should a later split not automatically extend across the entire feature space?</p>
+</article>
+<h3>Application</h3>
+<article id="L07-3-1"><span class="id">L07-3-1</span><p class="question">Using binary disorder H=-p*log2(p)-(1-p)*log2(1-p), compare a set with two positives and two negatives to a set with four positives and no negatives. What are the disorders and which is purer?</p>
+</article>
+<article id="L07-3-2"><span class="id">L07-3-2</span><p class="question">Test A splits eight examples into three branches: three positives, three negatives, and a balanced pair. Test B splits the same examples into two balanced groups of four. Calculate weighted disorder for each and choose the preferred split by the lecture&#x27;s criterion.</p>
+</article>
+<article id="L07-3-3"><span class="id">L07-3-3</span><p class="question">Training examples on a single numeric feature are 1:N, 2:N, 4:P, 5:P. Following the lecture&#x27;s candidate-threshold method, list the three midpoint thresholds and select the one producing pure children.</p>
+</article>
+<h3>Connections</h3>
+<article id="L07-4-1"><span class="id">L07-4-1</span><p class="question">Connect the Python lecture&#x27;s distinction between kinds of values with the identification-tree lecture&#x27;s difficulty applying its earlier numeric nearest-neighbor setup to vampire tests. What representation issue must be solved?</p>
+</article>
+<article id="L07-4-2"><span class="id">L07-4-2</span><p class="question">The identification-tree lecture favors a small tree, but the deep-net demonstration trains a wide network before reducing it. Why are these positions not necessarily contradictory?</p>
+</article>
+<article id="L07-4-3"><span class="id">L07-4-3</span><p class="question">Why can if-then rules obtained from an identification tree be useful for classification even though the games lecture says simple board-to-move rules are not enough for strong chess play?</p>
+</article>
+</section>
+<section id="lecture-8"><h2>6.034 — Lecture 12A: Neural Nets</h2>
+<p class="source">Patrick Henry Winston · MIT OpenCourseWare · <a href="https://www.youtube.com/watch?v=uXt8qF2Zzfo">Video</a> · <a href="https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-12a-neural-nets/">Course source</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+<h3>Lecture details</h3>
+<article id="L08-1-1"><span class="id">L08-1-1</span><p class="question">In the neural-net lecture, how is a neuron&#x27;s threshold represented so it can be treated as another weight?</p>
+</article>
+<article id="L08-1-2"><span class="id">L08-1-2</span><p class="question">Which smooth activation replaces the hard step in the neural-net lecture, and what happens to its output at very large positive and negative inputs?</p>
+</article>
+<article id="L08-1-3"><span class="id">L08-1-3</span><p class="question">In the small-network training demonstration, what happens when the rate constant is raised from 0.5 to 5 and then to 50?</p>
+</article>
+<h3>Understanding</h3>
+<article id="L08-2-1"><span class="id">L08-2-1</span><p class="question">Why does Winston put a minus sign on the squared-error performance function, and does this change what counts as a perfect prediction?</p>
+</article>
+<article id="L08-2-2"><span class="id">L08-2-2</span><p class="question">Why is a hard step activation inconvenient for the gradient-based training procedure introduced in the lecture?</p>
+</article>
+<article id="L08-2-3"><span class="id">L08-2-3</span><p class="question">Why does backpropagation not need to separately recompute every possible path through a multilayer network?</p>
+</article>
+<h3>Application</h3>
+<article id="L08-3-1"><span class="id">L08-3-1</span><p class="question">For the lecture&#x27;s sigmoid s(a)=1/(1+exp(-a)), what are s(0) and its derivative at a=0? Use the derivative form expressed in terms of the output.</p>
+</article>
+<article id="L08-3-2"><span class="id">L08-3-2</span><p class="question">A weight is w=2, the derivative of the performance to be maximized is dP/dw=-0.4, and the rate constant is 0.1. Using gradient ascent, what is the updated weight? Does one such step prove a global optimum has been found?</p>
+</article>
+<article id="L08-3-3"><span class="id">L08-3-3</span><p class="question">A small network has a single dependency chain w -&gt; h -&gt; z -&gt; P. At the current point, dh/dw=2, dz/dh=0.3 and dP/dz=-4. What is dP/dw, and which local derivatives are combined?</p>
+</article>
+<h3>Connections</h3>
+<article id="L08-4-1"><span class="id">L08-4-1</span><p class="question">How are the neural-net lecture&#x27;s rate constant and the basic-search lecture&#x27;s continuous hill climbing connected? Why can an oversized step undermine a locally promising direction?</p>
+</article>
+<article id="L08-4-2"><span class="id">L08-4-2</span><p class="question">Winston compares backpropagation&#x27;s reuse principle with an extended list in search. What repeated work is avoided in each case, and what is being reused?</p>
+</article>
+<article id="L08-4-3"><span class="id">L08-4-3</span><p class="question">How does the deep-net lecture&#x27;s probabilistic output training differ from the earlier negative-squared-error example, and what optimization idea do they share?</p>
+</article>
+</section>
+<section id="lecture-9"><h2>6.034 — Lecture 12B: Deep Neural Nets</h2>
+<p class="source">Patrick Henry Winston · MIT OpenCourseWare · <a href="https://www.youtube.com/watch?v=VrMHA3yX_QI">Video</a> · <a href="https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-12b-deep-neural-nets/">Course source</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+<h3>Lecture details</h3>
+<article id="L09-1-1"><span class="id">L09-1-1</span><p class="question">Which three animals are used in the deep-neural-net classroom demonstration, and what observation is used to distinguish them?</p>
+</article>
+<article id="L09-1-2"><span class="id">L09-1-2</span><p class="question">In the deep-net lecture&#x27;s convolution illustration, what approximate image and local-window sizes are given, and what operation follows to select local maxima?</p>
+</article>
+<article id="L09-1-3"><span class="id">L09-1-3</span><p class="question">In the deep-net width demonstration, how does gradually removing neurons after training compare with starting training with only two neurons per column?</p>
+</article>
+<h3>Understanding</h3>
+<article id="L09-2-1"><span class="id">L09-2-1</span><p class="question">Why can an autocoder learn something useful even though its desired output is just its input?</p>
+</article>
+<article id="L09-2-2"><span class="id">L09-2-2</span><p class="question">Why can the same image classifier have a lower top-five error than top-one error? Explain what each measure accepts as a correct result.</p>
+</article>
+<article id="L09-2-3"><span class="id">L09-2-3</span><p class="question">Why does Winston caution against inferring human-like understanding from plausible image labels and captions?</p>
+</article>
+<h3>Application</h3>
+<article id="L09-3-1"><span class="id">L09-3-1</span><p class="question">A max-pooling window contains activations [[1,4],[3,2]]. What single value does it return, and what information about the four inputs is not preserved by that value alone?</p>
+</article>
+<article id="L09-3-2"><span class="id">L09-3-2</span><p class="question">An image&#x27;s true label ranks fourth in a classifier&#x27;s ordered list of ten predictions. Is this a top-one success or a top-five success? What if the true label ranks sixth?</p>
+</article>
+<article id="L09-3-3"><span class="id">L09-3-3</span><p class="question">A binary classifier assigns positive-class probability 0.8 to a positive example and 0.3 to a negative example. Assuming independent examples, what probability does it assign to each observed label, and what is their joint likelihood?</p>
+</article>
+<h3>Connections</h3>
+<article id="L09-4-1"><span class="id">L09-4-1</span><p class="question">If an autocoder&#x27;s hidden vectors were used for nearest-neighbor retrieval, what would change compared with using raw word counts? What choice from the nearest-neighbor lecture would still matter?</p>
+</article>
+<article id="L09-4-2"><span class="id">L09-4-2</span><p class="question">Does the deep-net demonstration&#x27;s success after widening provide the same kind of assurance as the SVM lecture&#x27;s convex-optimization argument? Explain the difference.</p>
+</article>
+<article id="L09-4-3"><span class="id">L09-4-3</span><p class="question">How does the broad thinking–perception–action definition in Introduction and Scope help explain the later warning that a convincing image caption is not enough to establish general intelligence?</p>
+</article>
+</section>
+<section id="lecture-10"><h2>6.034 — Lecture 16: Learning: Support Vector Machines</h2>
+<p class="source">Patrick Henry Winston · MIT OpenCourseWare · <a href="https://www.youtube.com/watch?v=_PwhiWxHK8o">Video</a> · <a href="https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-16-learning-support-vector-machines/">Course source</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+<h3>Lecture details</h3>
+<article id="L10-1-1"><span class="id">L10-1-1</span><p class="question">In the SVM lecture&#x27;s street picture, how is w oriented relative to the separating boundary, and how is w used to classify a new vector u?</p>
+</article>
+<article id="L10-1-2"><span class="id">L10-1-2</span><p class="question">When Winston derives w as a weighted sum of training vectors, what does an alpha coefficient of zero mean for that vector&#x27;s contribution?</p>
+</article>
+<article id="L10-1-3"><span class="id">L10-1-3</span><p class="question">Which recurring operation in both the SVM optimization and its decision rule makes the kernel substitution possible?</p>
+</article>
+<h3>Understanding</h3>
+<article id="L10-2-1"><span class="id">L10-2-1</span><p class="question">Under the lecture&#x27;s constraints w dot x + b &gt;= 1 for positives and &lt;= -1 for negatives, why does minimizing the norm of w widen the separating street?</p>
+</article>
+<article id="L10-2-2"><span class="id">L10-2-2</span><p class="question">Why is failure to separate nonlinearly arranged classes with a straight boundary different from getting stuck at a bad local optimum?</p>
+</article>
+<article id="L10-2-3"><span class="id">L10-2-3</span><p class="question">What does the kernel trick let an SVM compute without explicitly building every transformed feature, and why does the derivation depend on dot products?</p>
+</article>
+<h3>Application</h3>
+<article id="L10-3-1"><span class="id">L10-3-1</span><p class="question">Use the decision rule positive when w dot u + b &gt;= 0, with w=(2,-1) and b=-1. Classify u=(2,1) and v=(0,2), showing their scores.</p>
+</article>
+<article id="L10-3-2"><span class="id">L10-3-2</span><p class="question">Two separators satisfy the same +/-1 training constraints. One has ||w||=5 and the other ||w||=2. What are their full street widths, and which is preferred by the maximum-margin objective?</p>
+</article>
+<article id="L10-3-3"><span class="id">L10-3-3</span><p class="question">For the kernel K(u,v)=(u dot v + 1)^2, with u=(1,2) and v=(2,0), calculate K. Must you explicitly construct phi(u) and phi(v) to obtain this value?</p>
+</article>
+<h3>Connections</h3>
+<article id="L10-4-1"><span class="id">L10-4-1</span><p class="question">How do the nearest-neighbor lecture and the SVM lecture use dot products for different purposes? Explain why a cosine similarity score is not itself the SVM decision rule.</p>
+</article>
+<article id="L10-4-2"><span class="id">L10-4-2</span><p class="question">Contrast the boundary geometry of the identification tree&#x27;s single-feature threshold tests with a linear SVM on two numeric features. Could they partition the same data differently?</p>
+</article>
+<article id="L10-4-3"><span class="id">L10-4-3</span><p class="question">Both a basic neuron and a linear SVM start with a weighted combination of inputs. What distinguishes the training objective and output interpretation in the neural-net and SVM lectures?</p>
+</article>
+</section>
+<p class="note">AI-assisted adaptation from the saved MIT OpenCourseWare transcripts. New questions and worked scenarios; original captions remain intact in the evidence. Adaptations shared under CC BY-NC-SA 4.0. No MIT endorsement implied. Version 1.0 · October 28, 2026.</p></main></html>

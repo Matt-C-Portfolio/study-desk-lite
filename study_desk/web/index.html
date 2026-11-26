@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Study Desk Lite</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/vendor/katex/katex.min.css" />
+  </head>
+  <body>
+    <svg style="position: absolute; width: 0; height: 0" aria-hidden="true">
+      <symbol id="notes" viewBox="0 0 24 24">
+        <path d="M6 3h9l3 3v15H6z" />
+        <path d="M14 3v4h4M9 12h6M9 16h5M9 8h2" />
+      </symbol>
+      <symbol id="link" viewBox="0 0 24 24">
+        <path
+          d="m10 13 4-4M8 16l-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0M16 8l1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0"
+          transform="translate(1 0) scale(.9)"
+        />
+      </symbol>
+      <symbol id="plus" viewBox="0 0 24 24">
+        <path d="M12 5v14M5 12h14" />
+      </symbol>
+      <symbol id="local" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="13" rx="2" />
+        <path d="M8 21h8M12 17v4" />
+      </symbol>
+    </svg>
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark unc-brand-mark" aria-hidden="true"
+            ><span class="unc-brand-logo"></span></span
+          ><span>study desk</span>
+        </div>
+        <p class="edition">Lite workspace</p>
+<nav aria-label="Main navigation"><div class="nav-library-top"><a class="nav-item" id="nav-library" href="#processed">Video library</a><a class="nav-item" id="nav-ask" href="#ask">Ask Study Desk</a></div><section class="nav-group" aria-label="Pipeline"><h2>Pipeline</h2><a class="nav-item" id="nav-intake" href="#intake">Video intake</a><a class="nav-item" id="nav-graph" href="#graph">Video graph</a></section><section class="nav-group" aria-label="Comparison"><h2>Comparison</h2><a class="nav-item" id="nav-comparison" href="#comparison">Model comparison</a><a class="nav-item" id="nav-answer-comparison" href="#answer-comparison">Answer comparison</a><a class="nav-item" id="nav-graph-comparison" href="#graph-comparison">Graph comparison</a></section><section class="nav-group" aria-label="Architecture"><h2>Architecture</h2><a class="nav-item" id="nav-architecture" href="#architecture">Architecture</a><a class="nav-item" id="nav-database" href="#database">Database / ERD</a></section></nav>
+        <div class="sidebar-foot">
+          <span class="status-dot"></span>
+          <div>On this computer<small>Local workspace</small></div>
+        </div>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Your study workspace</p>
+            <h1 id="page-title">Video intake</h1>
+          </div>
+          <span class="badge"
+            ><svg><use href="#local" /></svg>Stored locally</span
+          >
+        </header>
+        <section id="answer-comparison-view" hidden></section><section id="ask-view" hidden aria-label="Ask Study Desk"></section><section id="graph-comparison-view" hidden aria-label="Graph comparison"></section>
+        <section id="database-view" hidden aria-label="Database">
+<section class="panel db-section"><header><h2>PostgreSQL</h2><span class="arch-state">Active storage</span></header>
+<p>A relational database for videos, runs, concepts, claims, and their evidence.</p>
+<p class="db-current"><strong>Current runtime:</strong> PostgreSQL stores video metadata, transcript selections, and guide-run history in the isolated <code>study_desk_lite</code> schema. Transcripts, thumbnails, and generated outputs stay in local files.</p>
+<dl class="db-reasons"><div><dt>Connected records</dt><dd>Foreign keys and constraints keep claims, concepts, runs, and evidence linked consistently.</dd></div><div><dt>Flexible model output</dt><dd>JSONB supports variable settings and metadata alongside ordinary relational columns.</dd></div><div><dt>Retrieval support</dt><dd>BGE vectors are stored as REAL[] and ranked by application code using cosine similarity.</dd></div><div><dt>Fits Study Desk</dt><dd>The original app already defines its concept-and-evidence schema in PostgreSQL. Lite can use a smaller version, hosted locally.</dd></div></dl>
+<p class="hint">PostgreSQL runs as a local service. Connection credentials are configured outside the repository.</p>
+<p class="db-docs">PostgreSQL documentation: <a href="https://www.postgresql.org/docs/current/ddl-constraints.html" target="_blank" rel="noopener noreferrer">constraints</a> · <a href="https://www.postgresql.org/docs/current/datatype-json.html" target="_blank" rel="noopener noreferrer">JSONB</a> · <a href="https://www.postgresql.org/docs/current/textsearch-intro.html" target="_blank" rel="noopener noreferrer">PostgreSQL documentation</a></p></section>
+<section class="panel db-section"><header><h2>Current database ERD</h2><span class="arch-state">Implemented</span></header><p>The six video/run child tables shown here reference <code>video_intake.id</code>. Primary keys keep one transcript per kind and one record per numbered model run.</p><div class="erd-scroll"><svg class="erd-diagram" viewBox="0 0 1060 560" role="img" aria-label="Current PostgreSQL tables and foreign key relationships"><title>Current PostgreSQL storage</title><path class="erd-link" d="M320 270H370V90H400 M370 90V455H400 M370 270H400 M370 90V15H715V455H740 M715 90H740 M715 270H740"/><g class="erd-table" transform="translate(20,205)"><rect width="300" height="114" rx="4"/><path d="M0 34H300"/><text class="erd-table-name" x="12" y="23">video_intake</text><text class="erd-field" x="12" y="57">PK id</text><text class="erd-field" x="12" y="81">url (unique)</text><text class="erd-field" x="12" y="105">created_at</text></g><g class="erd-table" transform="translate(400,35)"><rect width="300" height="114" rx="4"/><path d="M0 34H300"/><text class="erd-table-name" x="12" y="23">video_processing</text><text class="erd-field" x="12" y="57">PK/FK video_id</text><text class="erd-field" x="12" y="81">state, detail</text><text class="erd-field" x="12" y="105">transcript_path, method</text></g><text class="erd-note" x="408" y="27">1 to 0..1</text><g class="erd-table" transform="translate(400,215)"><rect width="300" height="90" rx="4"/><path d="M0 34H300"/><text class="erd-table-name" x="12" y="23">video_metadata</text><text class="erd-field" x="12" y="57">PK/FK video_id</text><text class="erd-field" x="12" y="81">data JSONB</text></g><text class="erd-note" x="408" y="207">1 to 0..1</text><g class="erd-table" transform="translate(400,400)"><rect width="300" height="90" rx="4"/><path d="M0 34H300"/><text class="erd-table-name" x="12" y="23">caption_checks</text><text class="erd-field" x="12" y="57">PK/FK video_id</text><text class="erd-field" x="12" y="81">status</text></g><text class="erd-note" x="408" y="392">1 to 0..1</text><g class="erd-table" transform="translate(740,35)"><rect width="300" height="90" rx="4"/><path d="M0 34H300"/><text class="erd-table-name" x="12" y="23">transcript_versions</text><text class="erd-field" x="12" y="57">PK/FK video_id, PK kind</text><text class="erd-field" x="12" y="81">path, method</text></g><text class="erd-note" x="748" y="27">1 to 0..*</text><g class="erd-table" transform="translate(740,215)"><rect width="300" height="90" rx="4"/><path d="M0 34H300"/><text class="erd-table-name" x="12" y="23">study_runs</text><text class="erd-field" x="12" y="57">PK/FK video_id, PK model</text><text class="erd-field" x="12" y="81">data JSONB</text></g><text class="erd-note" x="748" y="207">1 to 0..*</text><g class="erd-table" transform="translate(740,400)"><rect width="300" height="114" rx="4"/><path d="M0 34H300"/><text class="erd-table-name" x="12" y="23">study_run_history</text><text class="erd-field" x="12" y="57">PK/FK video_id, PK model</text><text class="erd-field" x="12" y="81">PK run_number</text><text class="erd-field" x="12" y="105">data JSONB</text></g><text class="erd-note" x="748" y="392">1 to 0..*</text></svg></div><p class="hint">JSONB records retain model settings, timings, costs, pass progress, and output paths. Large output files remain on disk.</p></section>
+<section class="panel db-section"><header><h2>Graph database ERD</h2><span class="arch-state">Implemented</span></header>
+<p>Four views of the graph storage schema. Repeated table names refer to the same table.</p><p class="hint">PK = primary key · FK = foreign key · 1 = one · 0..* = zero or more. Multiple PK fields form a composite key. Key fields shown; implementation columns are omitted.</p>
+<h3>1. Videos, saved runs, and graph inputs</h3><div class="erd-scroll" tabindex="0" aria-label="Scrollable entity relationship diagram"><svg class="erd-diagram" viewBox="0 0 1040 510" role="img" aria-labelledby="Sources-and-build-inputs-title Sources-and-build-inputs-desc"><title id="Sources-and-build-inputs-title">Sources and build inputs</title><desc id="Sources-and-build-inputs-desc">Each graph build selects one saved successful run per video. The composite foreign key references study_run_history. Original extraction and source records are copied into the immutable input snapshot.</desc><g class="erd-table"><rect x="20" y="20" width="240" height="88" rx="4"/><path d="M20 54H260"/><text class="erd-table-name" x="32" y="43">video_intake</text><text class="erd-field" x="32" y="76">PK id</text><text class="erd-field" x="32" y="100">url · created_at</text></g><g class="erd-table"><rect x="400" y="20" width="240" height="112" rx="4"/><path d="M400 54H640"/><text class="erd-table-name" x="412" y="43">study_run_history</text><text class="erd-field" x="412" y="76">PK/FK video_id</text><text class="erd-field" x="412" y="100">PK model · PK run_number</text><text class="erd-field" x="412" y="124">data JSONB: status, paths</text></g><g class="erd-table"><rect x="780" y="20" width="240" height="112" rx="4"/><path d="M780 54H1020"/><text class="erd-table-name" x="792" y="43">graph_build</text><text class="erd-field" x="792" y="76">PK id</text><text class="erd-field" x="792" y="100">model · fingerprint</text><text class="erd-field" x="792" y="124">data JSONB: progress, costs</text></g><g class="erd-table"><rect x="400" y="280" width="240" height="136" rx="4"/><path d="M400 314H640"/><text class="erd-table-name" x="412" y="303">graph_input</text><text class="erd-field" x="412" y="336">PK/FK build_id</text><text class="erd-field" x="412" y="360">PK/FK video_id</text><text class="erd-field" x="412" y="384">FK model · FK run_number</text><text class="erd-field" x="412" y="408">snapshot JSONB</text></g><path class="erd-link" d="M260 75H400"/><text class="erd-relation" x="330" y="64">1 — 0..*</text><path class="erd-link" d="M520 132V280"/><text class="erd-relation" x="590" y="210">1 run — 0..* inputs</text><path class="erd-link" d="M900 132V335H640"/><text class="erd-relation" x="800" y="325">1 build — 0..* inputs</text><text class="erd-note" x="20" y="455">graph_input selects an exact saved run using (video_id, model, run_number).</text><text class="erd-note" x="20" y="480">snapshot retains the original extraction JSON, source chunks, attribution, and content hashes.</text></svg></div>
+<h3>2. Concepts, claims, and source passages</h3><div class="erd-scroll" tabindex="0" aria-label="Scrollable entity relationship diagram"><svg class="erd-diagram" viewBox="0 0 1040 550" role="img" aria-labelledby="Concepts-claims-and-evidence-title Concepts-claims-and-evidence-desc"><title id="Concepts-claims-and-evidence-title">Concepts claims and evidence</title><desc id="Concepts-claims-and-evidence-desc">Claims retain their extraction IDs, video topic, original text, examples, and source links. Claim_concept is many to many. Evidence spans are shared. Merged concepts retain their original records and point to the surviving canonical concept.</desc><g class="erd-table"><rect x="20" y="20" width="240" height="208" rx="4"/><path d="M20 54H260"/><text class="erd-table-name" x="32" y="43">concept</text><text class="erd-field" x="32" y="76">PK id</text><text class="erd-field" x="32" y="100">PK/FK build_id</text><text class="erd-field" x="32" y="124">label · description</text><text class="erd-field" x="32" y="148">FK merged_into_id (nullable)</text><text class="erd-field" x="32" y="172">embedding REAL[] (768)</text><text class="erd-field" x="32" y="196">embedding_model</text><text class="erd-field" x="32" y="220">embedding_revision</text></g><g class="erd-table"><rect x="400" y="20" width="240" height="88" rx="4"/><path d="M400 54H640"/><text class="erd-table-name" x="412" y="43">claim_concept</text><text class="erd-field" x="412" y="76">PK/FK concept_id</text><text class="erd-field" x="412" y="100">PK/FK claim_id</text></g><g class="erd-table"><rect x="780" y="20" width="240" height="160" rx="4"/><path d="M780 54H1020"/><text class="erd-table-name" x="792" y="43">graph_claim</text><text class="erd-field" x="792" y="76">PK id</text><text class="erd-field" x="792" y="100">PK/FK build_id · extraction_id</text><text class="erd-field" x="792" y="124">FK video_id</text><text class="erd-field" x="792" y="148">claim_text · original JSONB</text><text class="erd-field" x="792" y="172">topic + examples in original</text></g><g class="erd-table"><rect x="20" y="310" width="240" height="88" rx="4"/><path d="M20 344H260"/><text class="erd-table-name" x="32" y="333">concept_alias</text><text class="erd-field" x="32" y="366">PK/FK concept_id</text><text class="erd-field" x="32" y="390">PK alias</text></g><g class="erd-table"><rect x="400" y="310" width="240" height="208" rx="4"/><path d="M400 344H640"/><text class="erd-table-name" x="412" y="333">evidence_span</text><text class="erd-field" x="412" y="366">PK id</text><text class="erd-field" x="412" y="390">FK video_id · source_hash</text><text class="erd-field" x="412" y="414">start_s · end_s</text><text class="erd-field" x="412" y="438">text_content</text><text class="erd-field" x="412" y="462">embedding REAL[] (768)</text><text class="erd-field" x="412" y="486">embedding_model</text><text class="erd-field" x="412" y="510">embedding_revision</text></g><g class="erd-table"><rect x="780" y="310" width="240" height="88" rx="4"/><path d="M780 344H1020"/><text class="erd-table-name" x="792" y="333">claim_evidence</text><text class="erd-field" x="792" y="366">PK/FK claim_id</text><text class="erd-field" x="792" y="390">PK/FK span_id</text></g><path class="erd-link" d="M260 75H400"/><text class="erd-relation" x="330" y="64">1 — 0..*</text><path class="erd-link" d="M640 75H780"/><text class="erd-relation" x="710" y="64">0..* — 1</text><path class="erd-link" d="M140 228V310"/><text class="erd-relation" x="205" y="278">1 — 0..*</text><path class="erd-link" d="M900 180V310"/><text class="erd-relation" x="964" y="258">1 — 0..*</text><path class="erd-link" d="M640 365H780"/><text class="erd-relation" x="710" y="354">1 — 0..*</text></svg></div>
+<p class="hint">Claims map to concepts; concepts map to subject areas. Both mappings are many-to-many. Video topics remain source context, and transcript passages remain evidence. Claim text, examples, and extraction IDs are retained from the selected run.</p>
+<p class="hint"><strong>Embeddings:</strong> BGE base v1.5 encodes each concept’s name and description, and each source passage’s text. Store the 768-value normalized vector as a PostgreSQL <code>REAL[]</code>, with the model ID and pinned revision. Code compares vectors using cosine similarity. Source-passage vectors are shared across systems; concept vectors belong to their graph build. Claims keep their concept and evidence links.</p>
+<h3>3. Relationships between concepts</h3><div class="erd-scroll" tabindex="0" aria-label="Scrollable entity relationship diagram"><svg class="erd-diagram" viewBox="0 0 1040 490" role="img" aria-labelledby="Concept-relationships-title Concept-relationships-desc"><title id="Concept-relationships-title">Concept relationships</title><desc id="Concept-relationships-desc">Concept_edge references a source and a target concept within the same graph build. Edge_evidence links each relationship to supporting evidence spans.</desc><g class="erd-table"><rect x="20" y="25" width="240" height="184" rx="4" /><path d="M20 59H260" /><text class="erd-table-name" x="32" y="48">concept</text><text class="erd-field" x="32" y="81">PK id</text><text class="erd-field" x="32" y="105">PK/FK build_id</text><text class="erd-field" x="32" y="129">label</text><text class="erd-field" x="32" y="153">embedding REAL[] (768)</text><text class="erd-field" x="32" y="177">embedding_model</text><text class="erd-field" x="32" y="201">embedding_revision</text></g><g class="erd-table"><rect x="400" y="25" width="240" height="160" rx="4" /><path d="M400 59H640" /><text class="erd-table-name" x="412" y="48">concept_edge</text><text class="erd-field" x="412" y="81">PK id</text><text class="erd-field" x="412" y="105">PK/FK build_id</text><text class="erd-field" x="412" y="129">FK source_id</text><text class="erd-field" x="412" y="153">FK target_id</text><text class="erd-field" x="412" y="177">predicate · rationale</text></g><g class="erd-table"><rect x="780" y="25" width="240" height="88" rx="4" /><path d="M780 59H1020" /><text class="erd-table-name" x="792" y="48">edge_evidence</text><text class="erd-field" x="792" y="81">PK/FK edge_id</text><text class="erd-field" x="792" y="105">PK/FK span_id</text></g><path class="erd-link" d="M260 73H400" /><text class="erd-relation" x="330" y="62">1 — 0..* source</text><path class="erd-link" d="M260 118H320V151H400" /><text class="erd-relation" x="331" y="180">1 — 0..* target</text><path class="erd-link" d="M640 73H780" /><text class="erd-relation" x="710" y="62">1 — 0..*</text><g class="erd-table"><rect x="780" y="260" width="240" height="184" rx="4" /><path d="M780 294H1020" /><text class="erd-table-name" x="792" y="283">evidence_span</text><text class="erd-field" x="792" y="316">PK id</text><text class="erd-field" x="792" y="340">FK video_id · source_hash</text><text class="erd-field" x="792" y="364">text_content · timestamps</text><text class="erd-field" x="792" y="388">embedding REAL[] (768)</text><text class="erd-field" x="792" y="412">embedding_model</text><text class="erd-field" x="792" y="436">embedding_revision</text></g><path class="erd-link" d="M900 113V260" /><text class="erd-relation" x="961" y="204">0..* — 1</text><text class="erd-note" x="20" y="295">Example: neural-network training — uses → gradient descent.</text><text class="erd-note" x="20" y="322">Each relationship retains linked source passages; these links are not a factual verification.</text></svg></div>
+<h3>4. Subject areas and concept consolidation</h3><div class="erd-scroll" tabindex="0" aria-label="Scrollable entity relationship diagram"><svg class="erd-diagram" viewBox="0 0 1040 580" role="img" aria-labelledby="Subject-areas-and-consolidation-title Subject-areas-and-consolidation-desc"><title id="Subject-areas-and-consolidation-title">Subject areas and consolidation</title><desc id="Subject-areas-and-consolidation-desc">Concepts belong to subject areas through a many-to-many join. Concept resolution records the model decision for candidate and matched concept IDs. Merged concepts retain a pointer to their survivor; original evidence is preserved.</desc><g class="erd-table"><rect x="20" y="20" width="240" height="112" rx="4"/><path d="M20 54H260"/><text class="erd-table-name" x="32" y="43">concept</text><text class="erd-field" x="32" y="76">PK id · PK/FK build_id</text><text class="erd-field" x="32" y="100">label</text><text class="erd-field" x="32" y="124">FK merged_into_id (nullable)</text></g><g class="erd-table"><rect x="400" y="20" width="240" height="88" rx="4"/><path d="M400 54H640"/><text class="erd-table-name" x="412" y="43">concept_subject_area</text><text class="erd-field" x="412" y="76">PK/FK concept_id</text><text class="erd-field" x="412" y="100">PK/FK area_id</text></g><g class="erd-table"><rect x="780" y="20" width="240" height="112" rx="4"/><path d="M780 54H1020"/><text class="erd-table-name" x="792" y="43">subject_area</text><text class="erd-field" x="792" y="76">PK id</text><text class="erd-field" x="792" y="100">PK/FK build_id</text><text class="erd-field" x="792" y="124">label · description</text></g><path class="erd-link" d="M260 75H400"/><text class="erd-relation" x="330" y="64">1 — 0..*</text><path class="erd-link" d="M640 75H780"/><text class="erd-relation" x="710" y="64">0..* — 1</text><g class="erd-table"><rect x="400" y="290" width="240" height="160" rx="4"/><path d="M400 324H640"/><text class="erd-table-name" x="412" y="313">concept_resolution</text><text class="erd-field" x="412" y="346">PK/FK build_id</text><text class="erd-field" x="412" y="370">PK/FK candidate_id</text><text class="erd-field" x="412" y="394">PK/FK matched_id</text><text class="erd-field" x="412" y="418">decision: merge / keep</text><text class="erd-field" x="412" y="442">rationale · response_path</text></g><path class="erd-link" d="M260 95H300V346H400"/><text class="erd-relation" x="287" y="231">1 — 0..* candidate</text><path class="erd-link" d="M140 132V425H400"/><text class="erd-relation" x="240" y="414">1 — 0..* matched</text><text class="erd-note" x="20" y="500">merged_into_id → concept.id: retain the original concept; use the survivor for active mappings.</text><text class="erd-note" x="20" y="526">Merge: move claim links, retain alternative names as aliases, and save the decision with its raw response.</text><text class="erd-note" x="20" y="552">Keep: preserve both concepts. Subject-area membership and concept relationships are separate links.</text></svg></div>
+<details><summary>Build boundaries and source tracking</summary><p>Graph-owned child tables include build_id; graph_build itself uses id, and evidence_span is shared across builds. Composite foreign keys keep claim assignments, memberships, relationships, and merge decisions inside one build. The diagrams omit repeated build_id fields on join tables for space.</p><p>graph_claim retains extraction-file and position IDs plus original topic text and examples in JSONB. Its (build_id, video_id) references graph_input. evidence_span stores exact source substrings, offsets, the original chunk time range, and BGE vectors. A timestamp identifies the original source chunk, not a more precise inferred sentence time.</p><p>Merge decisions retain both concept records and aliases; claims and evidence are never rewritten. Raw model responses, prompts, timings and issues are saved under data/graphs. Removing a video invalidates and removes any graph built from it.</p></details>
+</section><section class="panel arch-section"><header><h2>Transcript retrieval ERD</h2><span class="arch-state">Implemented</span></header><p>These tables connect the currently indexed transcript to shared evidence spans. They are implemented in <code>retrieval.py</code>.</p><div class="arch-scroll"><svg class="arch-diagram" viewBox="0 0 1060 165" role="img" aria-label="Transcript retrieval database relationships"><title>Transcript retrieval database relationships</title><rect class="arch-node" x="5" y="40" width="240" height="100" rx="8" fill="#e9f0ec"/><text class="arch-kind" x="125" y="63">STORAGE</text><text class="arch-title" x="125" y="89">video_intake</text><text class="arch-sub" x="125" y="110">PK id</text><text class="arch-sub" x="125" y="125">one video</text><path class="arch-edge" d="M245 90H271l-6 -4m6 4l-6 4"/><text class="arch-label" x="260" y="25">1 → 0..1</text><rect class="arch-node" x="275" y="40" width="240" height="100" rx="8" fill="#e9f0ec"/><text class="arch-kind" x="395" y="63">STORAGE</text><text class="arch-title" x="395" y="89">rag_transcript</text><text class="arch-sub" x="395" y="110">PK/FK video_id</text><text class="arch-sub" x="395" y="125">digest, revision, indexed_at</text><path class="arch-edge" d="M515 90H541l-6 -4m6 4l-6 4"/><text class="arch-label" x="530" y="25">1 → 0..*</text><rect class="arch-node" x="545" y="40" width="240" height="100" rx="8" fill="#e9f0ec"/><text class="arch-kind" x="665" y="63">STORAGE</text><text class="arch-title" x="665" y="89">rag_passage</text><text class="arch-sub" x="665" y="110">PK/FK video_id</text><text class="arch-sub" x="665" y="125">PK/FK span_id</text><path class="arch-edge" d="M785 90H811l-6 -4m6 4l-6 4"/><text class="arch-label" x="800" y="25">0..* → 1</text><rect class="arch-node" x="815" y="40" width="240" height="100" rx="8" fill="#e9f0ec"/><text class="arch-kind" x="935" y="63">STORAGE</text><text class="arch-title" x="935" y="89">evidence_span</text><text class="arch-sub" x="935" y="110">PK id · FK video_id</text><text class="arch-sub" x="935" y="125">text, offsets, times, vector</text></svg></div><p class="arch-foot"><code>rag_transcript.transcript_digest</code> identifies the selected saved transcript; <code>embedding_revision</code> pins the BGE revision. <code>rag_passage.span_id</code> references <code>evidence_span.id</code>. Claims and graph edges also link to these shared spans through <code>claim_evidence</code> and <code>edge_evidence</code>.</p></section><section class="panel arch-section"><header><h2>Files alongside PostgreSQL</h2><span class="arch-state">Implemented</span></header><div class="arch-file-grid"><div><h3>data/answers/&lt;job_id&gt;</h3><p>Question, model, mode, seed, status, rendered answer, structured answer, source passages and graph paths in <code>result.json</code>. The folder also retains the prompt, raw output and available API usage.</p></div><div><h3>data/experiments/qa-full-v1</h3><p><code>manifest.json</code> tracks each question × model × mode attempt and its job ID. <code>summary.json</code> aggregates timings and costs. <code>runs/</code> preserves finished answer copies.</p></div></div><p class="arch-foot">These are filesystem records, not missing ERD tables. Answer source IDs refer to saved transcript passages; graph answers also retain a build ID. Comparison charts read these records and keep model failures visible.</p></section></section>
+        <section id="architecture-view" hidden aria-label="Architecture"><p class="arch-intro">Components, model calls, and the records passed between them.</p><div class="arch-legend"><span class="ui">User interface</span><span class="code">Application code</span><span class="model">Model call</span><span class="store">Local storage</span></div><section class="panel arch-section"><header><h2>1. Video intake</h2><span class="arch-state">Implemented</span></header><div class="arch-scroll"><svg class="arch-diagram" viewBox="0 0 1060 165" role="img" aria-label="Video intake and saved transcript"><title>Video intake and saved transcript</title><rect class="arch-node" x="5" y="40" width="240" height="100" rx="8" fill="#f1edf7"/><text class="arch-kind" x="125" y="63">USER INTERFACE</text><text class="arch-title" x="125" y="89">Video URL</text><text class="arch-sub" x="125" y="110">Curated MIT selection</text><text class="arch-sub" x="125" y="125">or a permitted URL</text><path class="arch-edge" d="M245 90H271l-6 -4m6 4l-6 4"/><text class="arch-label" x="260" y="25">URL</text><rect class="arch-node" x="275" y="40" width="240" height="100" rx="8" fill="#fffefb"/><text class="arch-kind" x="395" y="63">CODE</text><text class="arch-title" x="395" y="89">Check captions</text><text class="arch-sub" x="395" y="110">Fetch video metadata</text><text class="arch-sub" x="395" y="125">manual / generated / unavailable</text><path class="arch-edge" d="M515 90H541l-6 -4m6 4l-6 4"/><text class="arch-label" x="530" y="25">availability</text><rect class="arch-node" x="545" y="40" width="240" height="100" rx="8" fill="#f1edf7"/><text class="arch-kind" x="665" y="63">USER INTERFACE</text><text class="arch-title" x="665" y="89">Choose transcript</text><text class="arch-sub" x="665" y="110">Use captions or explicitly</text><text class="arch-sub" x="665" y="125">transcribe with faster-whisper</text><path class="arch-edge" d="M785 90H811l-6 -4m6 4l-6 4"/><text class="arch-label" x="800" y="25">selection</text><rect class="arch-node" x="815" y="40" width="240" height="100" rx="8" fill="#e9f0ec"/><text class="arch-kind" x="935" y="63">STORAGE</text><text class="arch-title" x="935" y="89">Saved video + transcript</text><text class="arch-sub" x="935" y="110">PostgreSQL: selection + metadata</text><text class="arch-sub" x="935" y="125">Files: text, timestamps, thumbnail</text></svg></div><p class="arch-foot">Caption checks do not automatically start local transcription. Attribution and license metadata travel with the saved video and exported notes.</p></section><section class="panel arch-section"><header><h2>2. Generate study notes</h2><span class="arch-state">Built</span></header>
+          <div class="arch-scroll" tabindex="0" aria-label="Scrollable architecture diagram"><svg class="arch-diagram" viewBox="0 0 1040 505" role="img" aria-labelledby="processing-title processing-desc"><title id="processing-title">processing</title><desc id="processing-desc">Saved transcript flows through chunking, extraction, topic IDs, consolidation, group assembly, formatting and rendering into saved notes. Review reads assembled topics and original source chunks and writes comparison findings separately.</desc><defs><marker id="processing-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#567286" stroke="none"/></marker></defs><g class="arch-node"><path d="M30,42 C30,26 210,26 210,42 V106 C210,122 30,122 30,106 Z" fill="#e9f0ec"/><path d="M30,42 C30,58 210,58 210,42" fill="none"/><text x="120.0" y="65" class="arch-kind">STORAGE</text><text x="120.0" y="85" class="arch-title">Saved transcript</text><text x="120.0" y="104" class="arch-sub">text + timestamps</text></g><g class="arch-node"><rect x="290" y="30" width="180" height="88" rx="3" fill="#fffefb"/><text x="380.0" y="65" class="arch-kind">CODE</text><text x="380.0" y="85" class="arch-title">Prepare chunks</text><text x="380.0" y="104" class="arch-sub">assign source IDs</text></g><g class="arch-node"><rect x="550" y="30" width="180" height="88" rx="12" fill="#e6f1fb"/><text x="640.0" y="65" class="arch-kind">MODEL CALL</text><text x="640.0" y="85" class="arch-title">1 · Extract</text><text x="640.0" y="104" class="arch-sub">one call per chunk</text></g><g class="arch-node"><rect x="810" y="30" width="180" height="88" rx="3" fill="#fffefb"/><text x="900.0" y="65" class="arch-kind">CODE</text><text x="900.0" y="85" class="arch-title">Build topic catalog</text><text x="900.0" y="104" class="arch-sub">assign topic IDs</text></g><g class="arch-node"><rect x="810" y="210" width="180" height="88" rx="12" fill="#e6f1fb"/><text x="900.0" y="245" class="arch-kind">MODEL CALL</text><text x="900.0" y="265" class="arch-title">2 · Consolidate</text><text x="900.0" y="284" class="arch-sub">group topics by IDs</text></g><g class="arch-node"><rect x="550" y="210" width="180" height="88" rx="3" fill="#fffefb"/><text x="640.0" y="245" class="arch-kind">CODE</text><text x="640.0" y="265" class="arch-title">Assemble groups</text><text x="640.0" y="284" class="arch-sub">retain details + sources</text></g><g class="arch-node"><rect x="290" y="210" width="180" height="88" rx="12" fill="#e6f1fb"/><text x="380.0" y="245" class="arch-kind">MODEL CALL</text><text x="380.0" y="265" class="arch-title">4 · Format</text><text x="380.0" y="284" class="arch-sub">one call per topic</text></g><g class="arch-node"><rect x="30" y="210" width="180" height="88" rx="3" fill="#fffefb"/><text x="120.0" y="245" class="arch-kind">CODE</text><text x="120.0" y="265" class="arch-title">Render guide</text><text x="120.0" y="284" class="arch-sub">attach source timestamps</text></g><g class="arch-node"><path d="M30,402 C30,386 210,386 210,402 V466 C210,482 30,482 30,466 Z" fill="#e9f0ec"/><path d="M30,402 C30,418 210,418 210,402" fill="none"/><text x="120.0" y="425" class="arch-kind">STORAGE</text><text x="120.0" y="445" class="arch-title">Study guide</text><text x="120.0" y="464" class="arch-sub">notes.md + format.json</text></g><g class="arch-node"><rect x="550" y="390" width="180" height="88" rx="12" fill="#e6f1fb"/><text x="640.0" y="425" class="arch-kind">MODEL CALL</text><text x="640.0" y="445" class="arch-title">3 · Review</text><text x="640.0" y="464" class="arch-sub">advisory observations</text></g><g class="arch-node"><path d="M810,402 C810,386 990,386 990,402 V466 C990,482 810,482 810,466 Z" fill="#e9f0ec"/><path d="M810,402 C810,418 990,418 990,402" fill="none"/><text x="900.0" y="425" class="arch-kind">STORAGE</text><text x="900.0" y="445" class="arch-title">Comparison results</text><text x="900.0" y="464" class="arch-sub">issues + observations</text></g><path class="arch-edge" d="M210 74H290" marker-end="url(#processing-arrow)"/><text class="arch-label" x="250" y="62">text</text><path class="arch-edge" d="M470 74H550" marker-end="url(#processing-arrow)"/><text class="arch-label" x="510" y="62">chunks</text><path class="arch-edge" d="M730 74H810" marker-end="url(#processing-arrow)"/><text class="arch-label" x="770" y="62">topics</text><path class="arch-edge" d="M900 118V210" marker-end="url(#processing-arrow)"/><text class="arch-label" x="960" y="168">topic catalog</text><path class="arch-edge" d="M810 254H730" marker-end="url(#processing-arrow)"/><text class="arch-label" x="770" y="242">group IDs</text><path class="arch-edge" d="M550 254H470" marker-end="url(#processing-arrow)"/><text class="arch-label" x="510" y="242">topics</text><path class="arch-edge" d="M290 254H210" marker-end="url(#processing-arrow)"/><text class="arch-label" x="250" y="242">guide JSON</text><path class="arch-edge" d="M120 298V390" marker-end="url(#processing-arrow)"/><text class="arch-label" x="180" y="347">Markdown</text><path class="arch-edge" d="M640 298V390" marker-end="url(#processing-arrow)"/><text class="arch-label" x="762" y="347">topics + source chunks¹</text><path class="arch-edge" d="M730 434H810" marker-end="url(#processing-arrow)"/><text class="arch-label" x="770" y="422">findings</text></svg></div>
+          <p class="arch-foot">¹ Review also receives the original chunk and its extracted material. It runs before formatting, but its findings do not filter the guide. Arrows show data dependencies.</p>
+          <details><summary>Models and saved files</summary><p>Local: the selected DeepSeek model handles all four model stages. API: Luna handles extraction and formatting; Terra handles consolidation and review.</p><p>Each run saves its raw responses, pass JSON and guide in its own folder. PostgreSQL tracks videos and run status; files retain timings, settings and API usage/cost. Source passages remain linked by ID. Local inference runs on this computer; the API route sends prompts to OpenAI.</p></details></section><section class="panel arch-section"><header><h2>3. Build a graph for each system</h2><span class="arch-state">Implemented</span></header><div class="arch-scroll"><svg class="arch-diagram" viewBox="0 0 1060 165" role="img" aria-label="Graph construction from extracted topics"><title>Graph construction from extracted topics</title><rect class="arch-node" x="5" y="40" width="240" height="100" rx="8" fill="#fffefb"/><text class="arch-kind" x="125" y="63">CODE</text><text class="arch-title" x="125" y="89">Select saved inputs</text><text class="arch-sub" x="125" y="110">First successful run per video</text><text class="arch-sub" x="125" y="125">original topics, claims + evidence</text><path class="arch-edge" d="M245 90H271l-6 -4m6 4l-6 4"/><text class="arch-label" x="260" y="25">extractions</text><rect class="arch-node" x="275" y="40" width="240" height="100" rx="8" fill="#fffefb"/><text class="arch-kind" x="395" y="63">CODE</text><text class="arch-title" x="395" y="89">Seed topic concepts</text><text class="arch-sub" x="395" y="110">Code assigns IDs and claim links</text><text class="arch-sub" x="395" y="125">BGE ranks likely concept pairs</text><path class="arch-edge" d="M515 90H541l-6 -4m6 4l-6 4"/><text class="arch-label" x="530" y="25">fixed pairs</text><rect class="arch-node" x="545" y="40" width="240" height="100" rx="8" fill="#e6f1fb"/><text class="arch-kind" x="665" y="63">MODEL CALL</text><text class="arch-title" x="665" y="89">Resolve and connect</text><text class="arch-sub" x="665" y="110">Batched merge / keep → areas</text><text class="arch-sub" x="665" y="125">→ directed relationship decisions</text><path class="arch-edge" d="M785 90H811l-6 -4m6 4l-6 4"/><text class="arch-label" x="800" y="25">decisions</text><rect class="arch-node" x="815" y="40" width="240" height="100" rx="8" fill="#e9f0ec"/><text class="arch-kind" x="935" y="63">STORAGE</text><text class="arch-title" x="935" y="89">Graph build</text><text class="arch-sub" x="935" y="110">PostgreSQL: concepts + links</text><text class="arch-sub" x="935" y="125">Files: calls, issues, timings, cost</text></svg></div><p class="arch-foot">The model does not re-extract the transcript or assign every claim from scratch. Code seeds concepts from extracted topics, retains the original claims and evidence, and applies model decisions to fixed IDs. BGE suggests candidates; the model decides meaning. Consolidation, subject-area assignment, and relationship generation are separate stages with batches of up to 20 items.</p><p class="arch-foot">Each system has its own graph built from its own guide runs. DeepSeek uses the selected local model with seed 42. OpenAI uses Terra for consolidation and subject areas, then Luna for relationships. Graph quality depends on both extraction and graph-building output.</p></section><section class="panel arch-section"><header><h2>4. Index transcript passages</h2><span class="arch-state">Implemented</span></header><div class="arch-scroll"><svg class="arch-diagram" viewBox="0 0 1060 165" role="img" aria-label="Shared transcript embedding index"><title>Shared transcript embedding index</title><rect class="arch-node" x="5" y="40" width="240" height="100" rx="8" fill="#e9f0ec"/><text class="arch-kind" x="125" y="63">STORAGE</text><text class="arch-title" x="125" y="89">Selected transcripts</text><text class="arch-sub" x="125" y="110">Saved text + timestamps</text><text class="arch-sub" x="125" y="125">content fingerprint</text><path class="arch-edge" d="M245 90H271l-6 -4m6 4l-6 4"/><text class="arch-label" x="260" y="25">text</text><rect class="arch-node" x="275" y="40" width="240" height="100" rx="8" fill="#fffefb"/><text class="arch-kind" x="395" y="63">CODE</text><text class="arch-title" x="395" y="89">Split source passages</text><text class="arch-sub" x="395" y="110">Keep exact source text + offsets</text><text class="arch-sub" x="395" y="125">fit the BGE token window</text><path class="arch-edge" d="M515 90H541l-6 -4m6 4l-6 4"/><text class="arch-label" x="530" y="25">passages</text><rect class="arch-node" x="545" y="40" width="240" height="100" rx="8" fill="#e6f1fb"/><text class="arch-kind" x="665" y="63">MODEL CALL</text><text class="arch-title" x="665" y="89">BGE base en v1.5</text><text class="arch-sub" x="665" y="110">Local ONNX on CPU</text><text class="arch-sub" x="665" y="125">768-value normalized vectors</text><path class="arch-edge" d="M785 90H811l-6 -4m6 4l-6 4"/><text class="arch-label" x="800" y="25">vectors</text><rect class="arch-node" x="815" y="40" width="240" height="100" rx="8" fill="#e9f0ec"/><text class="arch-kind" x="935" y="63">STORAGE</text><text class="arch-title" x="935" y="89">Shared retrieval index</text><text class="arch-sub" x="935" y="110">evidence_span + rag_passage</text><text class="arch-sub" x="935" y="125">rag_transcript: digest + revision</text></svg></div><p class="arch-foot">Passage vectors are stored once and shared across systems. Concept vectors belong to each graph build. Both use the same BGE model. Retrieval loads PostgreSQL REAL[] vectors and ranks them with NumPy cosine similarity; it does not use full-text search or a separate vector database.</p></section><section class="panel arch-section"><header><h2>5. Ask Study Desk — four answer modes</h2><span class="arch-state">Implemented</span></header><p>One question, selected model, and answer mode enter <code>answers.py</code>. Retrieval is code plus BGE; one answer-generation call follows.</p><div class="arch-scroll"><svg class="arch-diagram" viewBox="0 0 1060 165" role="img" aria-label="Model only"><title>Model only</title><rect class="arch-node" x="5" y="40" width="240" height="100" rx="8" fill="#f1edf7"/><text class="arch-kind" x="125" y="63">USER INTERFACE</text><text class="arch-title" x="125" y="89">Model only</text><text class="arch-sub" x="125" y="110">Question + model</text><text class="arch-sub" x="125" y="125">local seed, when applicable</text><path class="arch-edge" d="M245 90H271l-6 -4m6 4l-6 4"/><text class="arch-label" x="260" y="25">question</text><rect class="arch-node" x="275" y="40" width="240" height="100" rx="8" fill="#fffefb"/><text class="arch-kind" x="395" y="63">CODE</text><text class="arch-title" x="395" y="89">Choose evidence</text><text class="arch-sub" x="395" y="110">No retrieved passages</text><text class="arch-sub" x="395" y="125">Answer from model knowledge</text><path class="arch-edge" d="M515 90H541l-6 -4m6 4l-6 4"/><text class="arch-label" x="530" y="25">context</text><rect class="arch-node" x="545" y="40" width="240" height="100" rx="8" fill="#e6f1fb"/><text class="arch-kind" x="665" y="63">MODEL CALL</text><text class="arch-title" x="665" y="89">Generate answer</text><text class="arch-sub" x="665" y="110">DeepSeek selected size / OpenAI Luna</text><text class="arch-sub" x="665" y="125">Markdown + LaTeX; source IDs</text><path class="arch-edge" d="M785 90H811l-6 -4m6 4l-6 4"/><text class="arch-label" x="800" y="25">response</text><rect class="arch-node" x="815" y="40" width="240" height="100" rx="8" fill="#e9f0ec"/><text class="arch-kind" x="935" y="63">STORAGE</text><text class="arch-title" x="935" y="89">Saved answer</text><text class="arch-sub" x="935" y="110">Prompt, raw output, result.json</text><text class="arch-sub" x="935" y="125">Sources, paths, timings + API cost</text></svg></div><div class="arch-scroll"><svg class="arch-diagram" viewBox="0 0 1060 165" role="img" aria-label="RAG"><title>RAG</title><rect class="arch-node" x="5" y="40" width="240" height="100" rx="8" fill="#f1edf7"/><text class="arch-kind" x="125" y="63">USER INTERFACE</text><text class="arch-title" x="125" y="89">RAG</text><text class="arch-sub" x="125" y="110">Question + model</text><text class="arch-sub" x="125" y="125">local seed, when applicable</text><path class="arch-edge" d="M245 90H271l-6 -4m6 4l-6 4"/><text class="arch-label" x="260" y="25">question</text><rect class="arch-node" x="275" y="40" width="240" height="100" rx="8" fill="#fffefb"/><text class="arch-kind" x="395" y="63">CODE</text><text class="arch-title" x="395" y="89">Choose evidence</text><text class="arch-sub" x="395" y="110">BGE question → transcript search</text><text class="arch-sub" x="395" y="125">Top six direct passages</text><path class="arch-edge" d="M515 90H541l-6 -4m6 4l-6 4"/><text class="arch-label" x="530" y="25">context</text><rect class="arch-node" x="545" y="40" width="240" height="100" rx="8" fill="#e6f1fb"/><text class="arch-kind" x="665" y="63">MODEL CALL</text><text class="arch-title" x="665" y="89">Generate answer</text><text class="arch-sub" x="665" y="110">DeepSeek selected size / OpenAI Luna</text><text class="arch-sub" x="665" y="125">Markdown + LaTeX; source IDs</text><path class="arch-edge" d="M785 90H811l-6 -4m6 4l-6 4"/><text class="arch-label" x="800" y="25">response</text><rect class="arch-node" x="815" y="40" width="240" height="100" rx="8" fill="#e9f0ec"/><text class="arch-kind" x="935" y="63">STORAGE</text><text class="arch-title" x="935" y="89">Saved answer</text><text class="arch-sub" x="935" y="110">Prompt, raw output, result.json</text><text class="arch-sub" x="935" y="125">Sources, paths, timings + API cost</text></svg></div><div class="arch-scroll"><svg class="arch-diagram" viewBox="0 0 1060 165" role="img" aria-label="Graph only"><title>Graph only</title><rect class="arch-node" x="5" y="40" width="240" height="100" rx="8" fill="#f1edf7"/><text class="arch-kind" x="125" y="63">USER INTERFACE</text><text class="arch-title" x="125" y="89">Graph only</text><text class="arch-sub" x="125" y="110">Question + model</text><text class="arch-sub" x="125" y="125">local seed, when applicable</text><path class="arch-edge" d="M245 90H271l-6 -4m6 4l-6 4"/><text class="arch-label" x="260" y="25">question</text><rect class="arch-node" x="275" y="40" width="240" height="100" rx="8" fill="#fffefb"/><text class="arch-kind" x="395" y="63">CODE</text><text class="arch-title" x="395" y="89">Choose evidence</text><text class="arch-sub" x="395" y="110">BGE question → top three concepts</text><text class="arch-sub" x="395" y="125">Linked evidence + one-hop neighbors</text><path class="arch-edge" d="M515 90H541l-6 -4m6 4l-6 4"/><text class="arch-label" x="530" y="25">context</text><rect class="arch-node" x="545" y="40" width="240" height="100" rx="8" fill="#e6f1fb"/><text class="arch-kind" x="665" y="63">MODEL CALL</text><text class="arch-title" x="665" y="89">Generate answer</text><text class="arch-sub" x="665" y="110">DeepSeek selected size / OpenAI Luna</text><text class="arch-sub" x="665" y="125">Markdown + LaTeX; source IDs</text><path class="arch-edge" d="M785 90H811l-6 -4m6 4l-6 4"/><text class="arch-label" x="800" y="25">response</text><rect class="arch-node" x="815" y="40" width="240" height="100" rx="8" fill="#e9f0ec"/><text class="arch-kind" x="935" y="63">STORAGE</text><text class="arch-title" x="935" y="89">Saved answer</text><text class="arch-sub" x="935" y="110">Prompt, raw output, result.json</text><text class="arch-sub" x="935" y="125">Sources, paths, timings + API cost</text></svg></div><div class="arch-scroll"><svg class="arch-diagram" viewBox="0 0 1060 165" role="img" aria-label="RAG + graph"><title>RAG + graph</title><rect class="arch-node" x="5" y="40" width="240" height="100" rx="8" fill="#f1edf7"/><text class="arch-kind" x="125" y="63">USER INTERFACE</text><text class="arch-title" x="125" y="89">RAG + graph</text><text class="arch-sub" x="125" y="110">Question + model</text><text class="arch-sub" x="125" y="125">local seed, when applicable</text><path class="arch-edge" d="M245 90H271l-6 -4m6 4l-6 4"/><text class="arch-label" x="260" y="25">question</text><rect class="arch-node" x="275" y="40" width="240" height="100" rx="8" fill="#fffefb"/><text class="arch-kind" x="395" y="63">CODE</text><text class="arch-title" x="395" y="89">Choose evidence</text><text class="arch-sub" x="395" y="110">Three direct transcript matches</text><text class="arch-sub" x="395" y="125">Up to three one-hop graph passages</text><path class="arch-edge" d="M515 90H541l-6 -4m6 4l-6 4"/><text class="arch-label" x="530" y="25">context</text><rect class="arch-node" x="545" y="40" width="240" height="100" rx="8" fill="#e6f1fb"/><text class="arch-kind" x="665" y="63">MODEL CALL</text><text class="arch-title" x="665" y="89">Generate answer</text><text class="arch-sub" x="665" y="110">DeepSeek selected size / OpenAI Luna</text><text class="arch-sub" x="665" y="125">Markdown + LaTeX; source IDs</text><path class="arch-edge" d="M785 90H811l-6 -4m6 4l-6 4"/><text class="arch-label" x="800" y="25">response</text><rect class="arch-node" x="815" y="40" width="240" height="100" rx="8" fill="#e9f0ec"/><text class="arch-kind" x="935" y="63">STORAGE</text><text class="arch-title" x="935" y="89">Saved answer</text><text class="arch-sub" x="935" y="110">Prompt, raw output, result.json</text><text class="arch-sub" x="935" y="125">Sources, paths, timings + API cost</text></svg></div><p class="arch-foot">All retrieval modes use up to six passages total. Graph retrieval ranks relationships and linked passages, removes duplicate evidence, and fills spare slots from its original candidates. Graph-only starts from concepts rather than a full transcript search. RAG + graph uses the selected system’s graph. Index fingerprints are checked against saved transcript selections.</p><p class="arch-foot">Retrieved answers attach source IDs to response blocks. The UI renders Markdown, math, and source previews. Graph relationships are retrieval hints; citations refer to transcript evidence. Raw model output is preserved.</p></section><section class="panel arch-section"><header><h2>6. Evaluation and comparison</h2><span class="arch-state">Implemented</span></header><div class="arch-scroll"><svg class="arch-diagram" viewBox="0 0 1060 165" role="img" aria-label="Q&amp;A evaluation and read-only comparisons"><title>Q&amp;A evaluation and read-only comparisons</title><rect class="arch-node" x="5" y="40" width="240" height="100" rx="8" fill="#e9f0ec"/><text class="arch-kind" x="125" y="63">STORAGE</text><text class="arch-title" x="125" y="89">Question bank</text><text class="arch-sub" x="125" y="110">120 transcript-based questions</text><text class="arch-sub" x="125" y="125">4 categories × 3 × 10 videos</text><path class="arch-edge" d="M245 90H271l-6 -4m6 4l-6 4"/><text class="arch-label" x="260" y="25">questions</text><rect class="arch-node" x="275" y="40" width="240" height="100" rx="8" fill="#fffefb"/><text class="arch-kind" x="395" y="63">CODE</text><text class="arch-title" x="395" y="89">Evaluation runner</text><text class="arch-sub" x="395" y="110">4 systems × 4 modes = 1,920</text><text class="arch-sub" x="395" y="125">Local sequential; API 7 workers</text><path class="arch-edge" d="M515 90H541l-6 -4m6 4l-6 4"/><text class="arch-label" x="530" y="25">saved results</text><rect class="arch-node" x="545" y="40" width="240" height="100" rx="8" fill="#e9f0ec"/><text class="arch-kind" x="665" y="63">STORAGE</text><text class="arch-title" x="665" y="89">Attempt records</text><text class="arch-sub" x="665" y="110">Manifest + per-answer files</text><text class="arch-sub" x="665" y="125">Failures retained; no auto retry</text><path class="arch-edge" d="M785 90H811l-6 -4m6 4l-6 4"/><text class="arch-label" x="800" y="25">metrics</text><rect class="arch-node" x="815" y="40" width="240" height="100" rx="8" fill="#f1edf7"/><text class="arch-kind" x="935" y="63">USER INTERFACE</text><text class="arch-title" x="935" y="89">Answer comparison</text><text class="arch-sub" x="935" y="110">Completion, length, time, cost</text><text class="arch-sub" x="935" y="125">Citations + side-by-side answers</text></svg></div><p class="arch-foot">Local attempts use seed 42; API answers are unseeded. Answer keys are not supplied to models. The runner resumes saved jobs, checks frozen Python hashes, and publishes comparison metadata after progress updates. The comparison tab only reads saved results; it makes no generation calls. Q&A results and experiment manifests are files, not PostgreSQL tables.</p></section></section>
+        <section id="graph-view" hidden aria-label="Video graph"></section>
+        <section id="comparison-view" hidden aria-label="Model comparison"><div id="experiment-comparison"></div></section>
+        
+        <div id="intake-view">
+          <section class="panel" aria-labelledby="step-one-title">
+            <div class="panel-header">
+              <span class="icon-box step-number" aria-hidden="true">1</span>
+              <div>
+                <p class="step-label">Step 1</p>
+                <h2 id="step-one-title">Add video &amp; check captions</h2>
+                <p>
+                  Check which captions are available before choosing a
+                  transcript.
+                </p>
+              </div>
+            </div>
+            <form id="intake">
+              <label for="lecture-preset">MIT OpenCourseWare test videos</label>
+              <select id="lecture-preset" aria-describedby="preset-hint">
+                <option value="">Choose a video or paste your own URL…</option>
+                <option value="https://www.youtube.com/watch?v=k6U-i4gXkLM">6.00 — Video 1: Computer Science and Python Introduction</option>
+                <option value="https://www.youtube.com/watch?v=TjZBTDzGeGg">6.034 — Video 1: Introduction and Scope</option>
+                <option value="https://www.youtube.com/watch?v=j1H3jAAGlEA">6.034 — Video 4: Search: Depth-First, Hill Climbing, Beam</option>
+                <option value="https://www.youtube.com/watch?v=gGQ-vAmdAOI">6.034 — Video 5: Search: Optimal, Branch and Bound, A*</option>
+                <option value="https://www.youtube.com/watch?v=STjW3eH0Cik">6.034 — Video 6: Search: Games, Minimax, and Alpha-Beta</option>
+                <option value="https://www.youtube.com/watch?v=09mb78oiPkA">6.034 — Video 10: Introduction to Learning, Nearest Neighbors</option>
+                <option value="https://www.youtube.com/watch?v=SXBG3RGr_Rc">6.034 — Video 11: Learning: Identification Trees, Disorder</option>
+                <option value="https://www.youtube.com/watch?v=uXt8qF2Zzfo">6.034 — Video 12A: Neural Nets</option>
+                <option value="https://www.youtube.com/watch?v=VrMHA3yX_QI">6.034 — Video 12B: Deep Neural Nets</option>
+                <option value="https://www.youtube.com/watch?v=_PwhiWxHK8o">6.034 — Video 16: Learning: Support Vector Machines</option>
+              </select>
+              <p id="preset-hint" class="hint">Choose a video to restore saved transcripts and runs. For a new video, click Check captions.</p>
+              <label for="url">Video URL</label>
+              <div class="input-row">
+                <input
+                  id="url"
+                  name="url"
+                  type="url"
+                  required
+                  maxlength="2048"
+                  placeholder="Paste a YouTube video link…"
+                  autocomplete="off"
+                  aria-describedby="hint status"
+                /><button id="submit" type="submit">Check captions</button>
+              </div>
+              <div id="rights-agreement" hidden>
+                <label><input type="checkbox" id="rights-confirmed" /> I own this video, or have permission or a license allowing me to fetch its captions/audio and process it into study materials.</label>
+                <p class="hint">This is your confirmation, not automatic license verification. Follow any attribution, sharing, and other license conditions. Choosing OpenAI sends the transcript to OpenAI.</p>
+              </div>
+              <p id="hint" class="hint">
+                This step checks captions only. Local transcription is your
+                choice in Step 2.
+              </p>
+              <p id="status" role="status" aria-live="polite"></p>
+            </form>
+            <div id="step-result" class="step-result" hidden></div>
+          </section>
+          <section
+            class="panel"
+            style="margin-top: 24px"
+            aria-labelledby="step-two-title"
+          >
+            <div class="panel-header">
+              <span class="icon-box step-number" aria-hidden="true">2</span>
+              <div>
+                <p class="step-label">Step 2</p>
+                <h2 id="step-two-title">Choose transcript</h2>
+                <p id="choice-summary">
+                  Check a video in Step 1 to see your options.
+                </p>
+              </div>
+            </div>
+            <div style="padding: 24px 26px">
+              <div
+                class="result-actions"
+                style="display: flex; gap: 12px; flex-wrap: wrap"
+              >
+                <button id="choose-captions" class="secondary" disabled>
+                  Use available captions</button
+                ><button id="choose-local" class="secondary" disabled>
+                  Transcribe locally
+                </button>
+              </div>
+              <div id="transcription-progress" hidden>
+                <div class="progress-heading">
+                  <strong id="progress-label">Local transcription</strong
+                  ><span id="progress-percent">0.0%</span>
+                </div>
+                <div
+                  id="progress-track"
+                  role="progressbar"
+                  aria-label="Local transcription progress"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow="0"
+                >
+                  <div id="progress-fill"></div>
+                </div>
+                <p id="progress-note">Waiting for the first audio segment…</p>
+              </div>
+              <p
+                id="choice-status"
+                class="job-detail"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </div>
+          </section>
+          <section id="study-step" class="panel">
+            <div class="panel-header">
+              <span class="icon-box step-number" aria-hidden="true">3</span>
+              <div>
+                <p class="step-label">Step 3</p>
+                <h2>Generate study materials</h2>
+                <p>
+                  Turn your selected transcript into source-backed study notes.
+                </p>
+              </div>
+            </div>
+            <div class="study-body">
+              <label for="study-model">Model</label>
+              <div class="study-controls">
+                <select id="study-model">
+                  <option value="1.5B">DeepSeek R1 · 1.5B — smallest</option>
+                  <option value="7B">DeepSeek R1 · 7B — medium</option>
+                  <option value="14B" selected>
+                    DeepSeek R1 · 14B — largest
+                  </option><option value="openai">OpenAI · Luna + Terra — API</option></select
+                ><button id="study-generate" disabled>
+                  Generate study notes
+                </button>
+              </div>
+              <div class="study-seed-controls">
+                <label for="study-seed">Seed for a single run</label>
+                <select id="study-seed">
+                  <option value="42">42</option><option value="43">43</option>
+                  <option value="44">44</option><option value="45">45</option>
+                  <option value="46">46</option><option value="">Random (unseeded)</option>
+                </select>
+                <button id="study-five" class="secondary">Run all 5 seeds</button>
+              </div>
+              <p class="hint" id="study-seed-hint">Run all 5 uses seeds 42-46 for the selected model, one at a time. Failed attempts are kept and the queue continues.</p>
+              <button id="study-all-local" class="secondary" disabled>Run all 15 local runs</button>
+              <p class="hint">Five fresh runs each for 1.5B, 7B, and 14B using seeds 42–46, one at a time. Failures are saved and the queue continues. OpenAI is not included.</p>
+              <p id="study-status" role="status">
+                Choose a transcript in Step 2 first.
+              </p>
+              <div id="study-passes"></div>
+              <p id="study-comparison"></p>
+              <button id="study-outputs" class="secondary" hidden>
+                Comparison results
+              </button>
+              <div id="study-result" hidden>
+                <button id="study-view" class="secondary">
+                  View study notes
+                </button>
+                <a id="study-download" download="study-notes.md"
+                  >Download notes</a
+                >
+              </div>
+            </div>
+          </section>
+        </div>
+        <section id="library-view" hidden>
+          <div class="library-tabs">
+            <span class="selected-tab">Videos</span
+            ><span id="library-count"></span>
+          </div>
+          <div class="filter-row">
+            <svg><use href="#notes" /></svg
+            ><input
+              id="filter"
+              type="search"
+              placeholder="Filter by title or channel"
+              aria-label="Filter processed videos"
+            />
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Video</th>
+                  <th>Transcript</th>
+                  <th>Status</th>
+                  <th>
+                    <button id="sort-date" class="sort-button">Date ↓</button>
+                  </th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="library-rows"></tbody>
+            </table>
+          </div>
+          <p id="library-empty" class="library-empty">
+            Processed videos will appear here once a transcript is ready.
+          </p>
+        </section>
+        <dialog id="lecture-dialog">
+          <div class="dialog-bar">
+            <strong>Video details</strong
+            ><button id="close-lecture" class="secondary">Close</button>
+          </div>
+          <div class="watch-layout">
+            <div>
+              <div id="player"></div>
+              <h2 id="lecture-title"></h2>
+              <p id="lecture-byline"></p>
+              <a id="watch-original" target="_blank" rel="noopener noreferrer"
+                >Watch on YouTube ↗</a
+              >
+              <details>
+                <summary>Description and source details</summary>
+                <p id="lecture-description"></p>
+                <p id="lecture-extra"></p>
+              </details>
+            </div>
+            <section class="transcript-panel">
+              <div class="transcript-heading">
+                <h3>Transcript</h3>
+                <a id="download-transcript" download>Download</a>
+              </div>
+              <p id="transcript-source"></p>
+              <pre id="transcript-text"></pre>
+            </section>
+          </div>
+        </dialog>
+      </main>
+    </div>
+    <dialog id="study-dialog">
+      <div class="dialog-bar">
+        <strong>Study notes</strong
+        ><button class="secondary" id="study-close">Close</button>
+      </div>
+      <div id="study-notes-text"></div>
+    </dialog>
+    <script src="/vendor/katex/katex.min.js"></script>
+    <script src="/app.js"></script>
+    <script src="/vendor/marked.js"></script>
+    <script src="/vendor/purify.js"></script>
+    <script src="/study.js"></script>
+    <script src="/graph.js"></script><script src="/ask.js"></script>
+  </body>
+</html>

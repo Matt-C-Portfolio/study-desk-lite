@@ -1,0 +1,42 @@
+# Keep comparison snapshots; only runtime output belongs outside Git.
+/data/
+/site/
+!/study_desk/web/data/
+!/study_desk/web/data/*.json
+__pycache__/
+*.pyc
+.venv/
+
+.env
+.env.*
+*.key
+models/**/.cache/
+
+# Downloaded model support files stay local. Keep the embedding test tokenizer and notices.
+/models/whisper/
+/models/bge-base-en-v1.5/*
+!/models/bge-base-en-v1.5/manifest.json
+!/models/bge-base-en-v1.5/LICENSE
+!/models/bge-base-en-v1.5/tokenizer.json
+
+# Downloaded weights and inference binaries (keep manifests and model cards).
+*.gguf
+*.onnx
+*.bin
+*.safetensors
+/runtime/llama.cpp/
+
+# Local builds, experiments, and credentials are not submission source.
+/.presentation-build/
+/DELETE-ME-test-artifacts/
+/DELETE/
+/output/
+/submission/
+*.log
+*.pid
+*.lock
+*.tmp
+*.partial
+.pytest_cache/
+.DS_Store
+Thumbs.db

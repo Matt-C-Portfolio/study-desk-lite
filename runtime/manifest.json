@@ -1,0 +1,21 @@
+{
+  "version": "b10059",
+  "commit": "11fd0a6fb",
+  "platform": "Windows x86_64",
+  "source": "https://github.com/ggml-org/llama.cpp/releases/tag/b10059",
+  "assets": [
+    {
+      "name": "cudart-llama-bin-win-cuda-12.4-x64.zip",
+      "browser_download_url": "https://github.com/ggml-org/llama.cpp/releases/download/b10059/cudart-llama-bin-win-cuda-12.4-x64.zip",
+      "digest": "sha256:8c79a9b226de4b3cacfd1f83d24f962d0773be79f1e7b75c6af4ded7e32ae1d6",
+      "size": 391443627
+    },
+    {
+      "name": "llama-b10059-bin-win-cuda-12.4-x64.zip",
+      "browser_download_url": "https://github.com/ggml-org/llama.cpp/releases/download/b10059/llama-b10059-bin-win-cuda-12.4-x64.zip",
+      "digest": "sha256:bfddb46a7caad182fa6a25f69c8080a1c176a361e539fd8d4b2b9ca028b9aad0",
+      "size": 249037377
+    }
+  ],
+  "note": "Locally installed executable reports this build on 2026-11-25. The original experiment did not record a runtime binary hash; this does not prove every historical run used this build."
+}

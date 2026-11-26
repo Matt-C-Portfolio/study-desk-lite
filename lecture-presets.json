@@ -1,0 +1,102 @@
+[
+  {
+    "title": "6.00 — Lecture 1: Computer Science and Python Introduction",
+    "url": "https://www.youtube.com/watch?v=k6U-i4gXkLM",
+    "source": "https://ocw.mit.edu/courses/6-00-introduction-to-computer-science-and-programming-fall-2008/",
+    "creators": "Eric Grimson and John Guttag",
+    "license_name": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "license_evidence": "https://ocw.mit.edu/pages/privacy-and-terms-of-use/",
+    "license_checked": "2026-10-27"
+  },
+  {
+    "title": "6.034 — Lecture 1: Introduction and Scope",
+    "url": "https://www.youtube.com/watch?v=TjZBTDzGeGg",
+    "source": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-1-introduction-and-scope/",
+    "creators": "Patrick Henry Winston",
+    "license_name": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "license_evidence": "https://ocw.mit.edu/pages/privacy-and-terms-of-use/",
+    "license_checked": "2026-10-27"
+  },
+  {
+    "title": "6.034 — Lecture 4: Search: Depth-First, Hill Climbing, Beam",
+    "url": "https://www.youtube.com/watch?v=j1H3jAAGlEA",
+    "source": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-4-search-depth-first-hill-climbing-beam/",
+    "creators": "Patrick Henry Winston",
+    "license_name": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "license_evidence": "https://ocw.mit.edu/pages/privacy-and-terms-of-use/",
+    "license_checked": "2026-10-27"
+  },
+  {
+    "title": "6.034 — Lecture 5: Search: Optimal, Branch and Bound, A*",
+    "url": "https://www.youtube.com/watch?v=gGQ-vAmdAOI",
+    "source": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-5-search-optimal-branch-and-bound-a/",
+    "creators": "Patrick Henry Winston",
+    "license_name": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "license_evidence": "https://ocw.mit.edu/pages/privacy-and-terms-of-use/",
+    "license_checked": "2026-10-27"
+  },
+  {
+    "title": "6.034 — Lecture 6: Search: Games, Minimax, and Alpha-Beta",
+    "url": "https://www.youtube.com/watch?v=STjW3eH0Cik",
+    "source": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-6-search-games-minimax-and-alpha-beta/",
+    "creators": "Patrick Henry Winston",
+    "license_name": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "license_evidence": "https://ocw.mit.edu/pages/privacy-and-terms-of-use/",
+    "license_checked": "2026-10-27"
+  },
+  {
+    "title": "6.034 — Lecture 10: Introduction to Learning, Nearest Neighbors",
+    "url": "https://www.youtube.com/watch?v=09mb78oiPkA",
+    "source": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-10-introduction-to-learning-nearest-neighbors/",
+    "creators": "Patrick Henry Winston",
+    "license_name": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "license_evidence": "https://ocw.mit.edu/pages/privacy-and-terms-of-use/",
+    "license_checked": "2026-10-27"
+  },
+  {
+    "title": "6.034 — Lecture 11: Learning: Identification Trees, Disorder",
+    "url": "https://www.youtube.com/watch?v=SXBG3RGr_Rc",
+    "source": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-11-learning-identification-trees-disorder/",
+    "creators": "Patrick Henry Winston",
+    "license_name": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "license_evidence": "https://ocw.mit.edu/pages/privacy-and-terms-of-use/",
+    "license_checked": "2026-10-27"
+  },
+  {
+    "title": "6.034 — Lecture 12A: Neural Nets",
+    "url": "https://www.youtube.com/watch?v=uXt8qF2Zzfo",
+    "source": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-12a-neural-nets/",
+    "creators": "Patrick Henry Winston",
+    "license_name": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "license_evidence": "https://ocw.mit.edu/pages/privacy-and-terms-of-use/",
+    "license_checked": "2026-10-27"
+  },
+  {
+    "title": "6.034 — Lecture 12B: Deep Neural Nets",
+    "url": "https://www.youtube.com/watch?v=VrMHA3yX_QI",
+    "source": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-12b-deep-neural-nets/",
+    "creators": "Patrick Henry Winston",
+    "license_name": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "license_evidence": "https://ocw.mit.edu/pages/privacy-and-terms-of-use/",
+    "license_checked": "2026-10-27"
+  },
+  {
+    "title": "6.034 — Lecture 16: Learning: Support Vector Machines",
+    "url": "https://www.youtube.com/watch?v=_PwhiWxHK8o",
+    "source": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-16-learning-support-vector-machines/",
+    "creators": "Patrick Henry Winston",
+    "license_name": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "license_evidence": "https://ocw.mit.edu/pages/privacy-and-terms-of-use/",
+    "license_checked": "2026-10-27"
+  }
+]

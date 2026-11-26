@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "words": 4527,
+  "total_seconds": 186.219,
+  "estimated_cost_usd": 0.15764759999999994,
+  "calls": 31,
+  "stage_timings_seconds": {
+    "Extract": 68.547,
+    "Consolidate": 4.906,
+    "Review": 44.766,
+    "Format": 67.984
+  },
+  "stage_api_seconds": {
+    "Extract": 68.532,
+    "Consolidate": 4.906,
+    "Review": 44.735,
+    "Format": 67.922
+  },
+  "old_outputs_unchanged": true
+}

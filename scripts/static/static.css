@@ -1,0 +1,11 @@
+.static-banner { background: #e8f3fc; border: 1px solid #bad4e9; border-radius: 10px; padding: 18px 22px; margin-bottom: 24px; color: #173c59; font-size: 1rem; }
+.static-banner strong { font-size: 1.125rem; }
+.static-banner p { line-height: 1.5; margin: 8px 0 12px; }
+.static-banner nav { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.static-banner a { color: #174f7a; text-decoration: underline; }
+[data-static-disabled] { opacity: .55; cursor: not-allowed; }
+#intake-view .step-label, #intake-view .step-number,
+#intake > label[for="url"], #intake .input-row, #intake #hint,
+#rights-agreement, #intake-view > section[aria-labelledby="step-two-title"],
+#study-step .study-seed-controls, #study-seed-hint, #ask-view form { display: none !important; }
+@media (max-width: 700px) { .static-banner { padding: 14px; } .static-banner nav { gap: 12px; } }

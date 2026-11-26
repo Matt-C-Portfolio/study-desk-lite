@@ -1,0 +1,46 @@
+{
+  "models": {
+    "Extract": "gpt-5.6-luna",
+    "Consolidate": "gpt-5.6-terra",
+    "Review": "gpt-5.6-terra",
+    "Format": "gpt-5.6-luna"
+  },
+  "pipeline": "study-desk-local-v9",
+  "format_version": "format-rules-v5",
+  "digest": "f93a4480cee6c76793603a45d01717340d6cd6756b6d7163494f610fcd45f5ce",
+  "transcript_sha256": "9a104b859383d12c64c0fd67e1c6fc2d0aaf2bacdce66404b0576ca636ad5f37",
+  "video_url": "https://www.youtube.com/watch?v=k6U-i4gXkLM",
+  "license": {
+    "title": "6.00 — Lecture 1: Computer Science and Python Introduction",
+    "url": "https://www.youtube.com/watch?v=k6U-i4gXkLM",
+    "source": "https://ocw.mit.edu/courses/6-00-introduction-to-computer-science-and-programming-fall-2008/",
+    "creators": "Eric Grimson and John Guttag",
+    "license_name": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "license_evidence": "https://ocw.mit.edu/pages/privacy-and-terms-of-use/",
+    "license_checked": "2026-10-27",
+    "attribution": "Eric Grimson and John Guttag. 6.00 — Lecture 1: Computer Science and Python Introduction. MIT OpenCourseWare, Massachusetts Institute of Technology.",
+    "scope": "OCW materials unless otherwise marked; separately credited third-party material may have different terms."
+  },
+  "reasoning_effort": "low",
+  "seed": null,
+  "temperature": "API default",
+  "method": "Lite four-pass workflow and prompts; normal app stage assignments; advisory review; no extra audit or repair passes.",
+  "prices_per_million": {
+    "gpt-5.6-luna": [
+      0.2,
+      0.02,
+      1.2
+    ],
+    "gpt-5.6-terra": [
+      2.0,
+      0.2,
+      12.0
+    ]
+  },
+  "pricing_sources": [
+    "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+    "https://developers.openai.com/api/docs/models/gpt-5.6-terra"
+  ],
+  "pricing_checked": "2026-10-27"
+}

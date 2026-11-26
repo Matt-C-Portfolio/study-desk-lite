@@ -1,0 +1,88 @@
+{
+  "format": 1,
+  "created_at": "2026-11-26T03:10:35.123487+00:00",
+  "description": "Recorded ten-lecture Study Desk Lite corpus and experiment artifacts.",
+  "table_rows": {
+    "video_intake": 10,
+    "video_processing": 10,
+    "video_metadata": 10,
+    "transcript_versions": 10,
+    "caption_checks": 10,
+    "study_run_history": 205,
+    "study_runs": 40,
+    "graph_build": 5,
+    "graph_input": 40,
+    "evidence_span": 251,
+    "graph_claim": 2648,
+    "claim_evidence": 10463,
+    "concept": 792,
+    "concept_alias": 316,
+    "claim_concept": 2648,
+    "concept_resolution": 1115,
+    "subject_area": 84,
+    "concept_subject_area": 742,
+    "concept_edge": 858,
+    "edge_evidence": 6485,
+    "rag_transcript": 10,
+    "rag_passage": 251
+  },
+  "artifact_files": 35307,
+  "artifact_bytes": 260855384,
+  "omitted_transient_files": [
+    "answers/20ae9a493b2f462e899bd46d9bf97ca2/result.tmp",
+    "answers/6f45038cd837451db285221e084196f8/result.tmp",
+    "experiments/openai-repeat.lock",
+    "experiments/qa-full-v1/runner.lock",
+    "experiments/qa-full-v1/runs/L05-3-1-7B-graph_only/result.tmp",
+    "experiments/qa-full-v1/runs/L06-2-3-14B-graph/result.tmp",
+    "server.stderr.log",
+    "server.stdout.log",
+    "ui.stderr.log",
+    "ui.stdout.log"
+  ],
+  "database": "database.json.gz",
+  "archives": [
+    "artifacts-001.zip",
+    "artifacts-002.zip",
+    "artifacts-003.zip",
+    "artifacts-004.zip",
+    "artifacts-005.zip",
+    "artifacts-006.zip",
+    "artifacts-007.zip"
+  ],
+  "files": {
+    "database.json.gz": {
+      "bytes": 5766607,
+      "sha256": "3b6491ba0398c097f7a838a89e7a328ffcb52b1fa73ba39852256e33191f74c5"
+    },
+    "artifacts-001.zip": {
+      "bytes": 14719357,
+      "sha256": "bdad27e1eb5106fc3cea4a175fbc5159455d629ab9adeddd9861aa3b97c66e21"
+    },
+    "artifacts-002.zip": {
+      "bytes": 12897954,
+      "sha256": "b0e061d2ac4092ffb646f897abc18bceb81107006992ea8e38848b59c85068bc"
+    },
+    "artifacts-003.zip": {
+      "bytes": 14737405,
+      "sha256": "6d2d539e532250fb6a094b4bb17deb405ae12a6899e59a756d40876a8ce25e74"
+    },
+    "artifacts-004.zip": {
+      "bytes": 14714178,
+      "sha256": "c69fde0ce78308c7d3efc6c17a6c9332919d48b30dab58793ae6290848734c87"
+    },
+    "artifacts-005.zip": {
+      "bytes": 14584522,
+      "sha256": "7cd390e2729f9abc3873169f520f9d8ef0de0610a4c1dddd8c6063e54dcdcd23"
+    },
+    "artifacts-006.zip": {
+      "bytes": 14530811,
+      "sha256": "92fb06f77d00e07e97ee9d594665ca466d67fab7e8e9d6c813e8e51a48d80ec9"
+    },
+    "artifacts-007.zip": {
+      "bytes": 2498443,
+      "sha256": "12201ec9c6923d7eae31e0f5625fa0c281bd04489b5ca7ccfbeb36c7dffdd3fc"
+    }
+  },
+  "paths": "Database paths use @study-desk-data/. Artifact contents retain their original bytes and historical paths."
+}

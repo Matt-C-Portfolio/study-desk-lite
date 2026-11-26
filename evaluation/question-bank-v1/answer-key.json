@@ -1,0 +1,1511 @@
+{
+  "version": "1.0",
+  "answers": [
+    {
+      "id": "L01-1-1",
+      "expected_answer_checklist": [
+        "Stop and return the guess g when g squared is sufficiently close to x.",
+        "Otherwise replace g with (g + x/g)/2 and repeat."
+      ],
+      "evidence_ids": [
+        "1:knowledge"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L01-1-2",
+      "expected_answer_checklist": [
+        "Quotes mark a sequence of characters as a string; 52 without quotes is a number.",
+        "Their types determine which operations apply and what those operations mean."
+      ],
+      "evidence_ids": [
+        "1:types"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L01-1-3",
+      "expected_answer_checklist": [
+        "It points to the location of an instruction in memory.",
+        "Execution normally advances to the next instruction; a test can change the counter to another instruction location."
+      ],
+      "evidence_ids": [
+        "1:machine"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L01-2-1",
+      "expected_answer_checklist": [
+        "Declarative knowledge states what is true and can let us check a proposed answer.",
+        "Imperative knowledge specifies executable steps, tests and a stopping condition for finding the answer."
+      ],
+      "evidence_ids": [
+        "1:knowledge"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L01-2-2",
+      "expected_answer_checklist": [
+        "Legal expression structure is different from meaningful operations and intended behavior.",
+        "A program can run with valid syntax and still perform the wrong computation; syntax checking does not establish correctness."
+      ],
+      "evidence_ids": [
+        "1:semantics"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L01-2-3",
+      "expected_answer_checklist": [
+        "String times integer means repetition, producing the string 333 in the first case.",
+        "Two strings do not have a supported multiplication operation; operand types control the meaning and validity of the operator."
+      ],
+      "evidence_ids": [
+        "1:operators"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L01-3-1",
+      "expected_answer_checklist": [
+        "The current squared error is |4 - 9| = 5, so the stopping test fails.",
+        "The next guess is (2 + 9/2)/2 = 3.25."
+      ],
+      "evidence_ids": [
+        "1:knowledge"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L01-3-2",
+      "expected_answer_checklist": [
+        "The first concatenates strings to give '527'; the second adds numbers to give 59.",
+        "The third fails because multiplication is not defined between two strings."
+      ],
+      "evidence_ids": [
+        "1:types",
+        "1:operators"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L01-3-3",
+      "expected_answer_checklist": [
+        "7 / 2 gives the integer 3 under the specified historical division behavior.",
+        "7 / 2.0 gives 3.5 because a floating-point operand requests real division."
+      ],
+      "evidence_ids": [
+        "1:operators"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": "The version is intentional. Do not apply Python 3 true division to the first expression; naming that distinction is welcome but not required."
+    },
+    {
+      "id": "L01-4-1",
+      "expected_answer_checklist": [
+        "The state graph describes situations, allowed transitions and constraints.",
+        "An algorithm must still specify how to explore transitions, choose the next step and recognize the goal; that is the imperative recipe."
+      ],
+      "evidence_ids": [
+        "1:knowledge",
+        "2:river"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L01-4-2",
+      "expected_answer_checklist": [
+        "Search initializes a queue, tests a path, expands it when needed and repeats.",
+        "The goal/dead-end tests and queue updates determine what happens next, illustrating controlled execution rather than a bare statement of the desired answer."
+      ],
+      "evidence_ids": [
+        "1:machine",
+        "3:queue"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L01-4-3",
+      "expected_answer_checklist": [
+        "A representation determines the operations available but does not automatically make those operations appropriate for the task.",
+        "Raw word-count vectors are numeric, yet Euclidean distance can favor short documents; comparing vector direction addresses the length mismatch."
+      ],
+      "evidence_ids": [
+        "1:types",
+        "6:articles"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": "This is a synthesis of the two examples, not a claim that the Python lecture discusses document retrieval."
+    },
+    {
+      "id": "L02-1-1",
+      "expected_answer_checklist": [
+        "Thinking, perception and action.",
+        "He frames AI in terms of models of these activities, supported by representations, constraints and algorithms."
+      ],
+      "evidence_ids": [
+        "2:scope",
+        "2:river"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L02-1-2",
+      "expected_answer_checklist": [
+        "He identifies a tree leaf using a field guide to North American trees.",
+        "Turning through possible tree descriptions generates candidates; comparing them with the leaf tests the candidates."
+      ],
+      "evidence_ids": [
+        "2:generator"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L02-1-3",
+      "expected_answer_checklist": [
+        "Four entities with two possible banks give 2^4 = 16 assignments.",
+        "Unsafe assignments in which something gets eaten are excluded."
+      ],
+      "evidence_ids": [
+        "2:river"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L02-2-1",
+      "expected_answer_checklist": [
+        "Naming an idea makes it possible to refer to it, discuss it and attach knowledge to it.",
+        "Once the method has a name, we can discuss useful properties such as avoiding duplicate candidates and using information to narrow generation."
+      ],
+      "evidence_ids": [
+        "2:generator",
+        "2:names"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L02-2-2",
+      "expected_answer_checklist": [
+        "It explicitly records participant locations and possible moves.",
+        "It exposes safety constraints and routes between the initial and goal situations, enabling a search procedure."
+      ],
+      "evidence_ids": [
+        "2:river"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L02-2-3",
+      "expected_answer_checklist": [
+        "A description triggers an imagined scene or relevant visual memory.",
+        "Visual processing of that scene provides information used to answer a question, so thinking invokes perception and uses its result."
+      ],
+      "evidence_ids": [
+        "2:perception"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L02-3-1",
+      "expected_answer_checklist": [
+        "There are five independently binary positions, including the farmer.",
+        "The count is 2^5 = 32; legality filtering can reduce this set afterward."
+      ],
+      "evidence_ids": [
+        "2:river"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L02-3-2",
+      "expected_answer_checklist": [
+        "Make generation nonredundant, avoiding repeated candidate solutions.",
+        "Make it informable: use the deciduous-tree information to exclude incompatible candidates."
+      ],
+      "evidence_ids": [
+        "2:generator"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L02-3-3",
+      "expected_answer_checklist": [
+        "Use the description to retrieve or construct the relevant transfer scene.",
+        "Inspect the scene to determine the recipient/possession relation and answer Bob; the same scene can support more than one question."
+      ],
+      "evidence_ids": [
+        "2:perception"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": "The names and question are new; the mechanism is adapted from the lecture demonstration."
+    },
+    {
+      "id": "L02-4-1",
+      "expected_answer_checklist": [
+        "Vectors and a separating boundary turn the classification task into a geometric representation.",
+        "Constraints on positive/negative examples and a margin objective make it possible to optimize a decision rule."
+      ],
+      "evidence_ids": [
+        "2:river",
+        "10:boundary",
+        "10:margin"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L02-4-2",
+      "expected_answer_checklist": [
+        "The field guide supplies candidate trees and the observed leaf supplies a match test.",
+        "The article library supplies candidate documents and word-count-vector similarity compares them with a query; its metric must suit the representation."
+      ],
+      "evidence_ids": [
+        "2:generator",
+        "6:articles"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L02-4-3",
+      "expected_answer_checklist": [
+        "Names make properties and concepts explicit enough to communicate and reason about.",
+        "A root-to-leaf path can be expressed using named tests and outcomes as rule conditions, with the leaf identification as the conclusion."
+      ],
+      "evidence_ids": [
+        "2:names",
+        "7:rules"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L03-1-1",
+      "expected_answer_checklist": [
+        "Depth-first search places newly extended paths at the front.",
+        "Breadth-first search places them at the back of the queue."
+      ],
+      "evidence_ids": [
+        "3:queue"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L03-1-2",
+      "expected_answer_checklist": [
+        "The example uses width two.",
+        "It keeps the two best paths at a level, judged by closeness to the goal, rather than keeping two successors for every parent independently."
+      ],
+      "evidence_ids": [
+        "3:beam"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L03-1-3",
+      "expected_answer_checklist": [
+        "A local maximum and a flat plateau can prevent useful progress.",
+        "A narrow diagonal ridge can make all sampled cardinal directions look downhill even though an uphill direction exists."
+      ],
+      "evidence_ids": [
+        "3:terrain"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L03-2-1",
+      "expected_answer_checklist": [
+        "It records nodes whose outgoing continuations have already been explored.",
+        "It avoids repeatedly extending equivalent continuations reached by different paths."
+      ],
+      "evidence_ids": [
+        "3:extended"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": "This question concerns the basic search mechanism, not a blanket optimality guarantee for arbitrary weighted search."
+    },
+    {
+      "id": "L03-2-2",
+      "expected_answer_checklist": [
+        "The heuristic ranks apparent distance remaining rather than all accumulated route costs.",
+        "A locally attractive direction need not give the best complete route; this ordering is a guide, not an optimality proof."
+      ],
+      "evidence_ids": [
+        "3:hill",
+        "3:beam"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L03-2-3",
+      "expected_answer_checklist": [
+        "Beam width constrains the retained frontier across a whole level.",
+        "Choosing two per parent can create many more than two surviving paths and fails to impose the same global limit."
+      ],
+      "evidence_ids": [
+        "3:beam"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L03-3-1",
+      "expected_answer_checklist": [
+        "DFS: [S-A-C, S-A-D, S-B].",
+        "BFS: [S-B, S-A-C, S-A-D]."
+      ],
+      "evidence_ids": [
+        "3:queue"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L03-3-2",
+      "expected_answer_checklist": [
+        "Sort the new extensions by their heuristic and place them in front: [S-A-D, S-A-C, S-B].",
+        "S-A-D is next; the lecture sorts the new extensions, not the entire waiting queue."
+      ],
+      "evidence_ids": [
+        "3:hill",
+        "3:beam"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L03-3-3",
+      "expected_answer_checklist": [
+        "D and B survive because they have the two lowest estimates.",
+        "Yes: heuristic ranking can discard a path that would ultimately be best; the width limit alone does not guarantee optimality."
+      ],
+      "evidence_ids": [
+        "3:beam"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L03-4-1",
+      "expected_answer_checklist": [
+        "Breadth-first explores by depth/number of edges, whereas branch-and-bound orders paths by accumulated cost.",
+        "When edge costs differ, a route with more edges can have lower total cost; the two rankings need not agree."
+      ],
+      "evidence_ids": [
+        "3:queue",
+        "4:oracle",
+        "4:stop"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L03-4-2",
+      "expected_answer_checklist": [
+        "Both seek improvements in an objective over a parameter space.",
+        "Neural-net training uses partial derivatives/the gradient to guide weight changes, with a rate constant controlling step size; local-search difficulties are not automatically eliminated."
+      ],
+      "evidence_ids": [
+        "3:terrain",
+        "8:objective",
+        "8:smooth"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L03-4-3",
+      "expected_answer_checklist": [
+        "Generate-and-test should avoid generating or considering the same solution repeatedly.",
+        "An extended list prevents repeated expansion of a node reached through multiple paths, eliminating repeated continuation work."
+      ],
+      "evidence_ids": [
+        "3:extended",
+        "2:generator"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L04-1-1",
+      "expected_answer_checklist": [
+        "The route is S-A-D-G.",
+        "Its total length is 11."
+      ],
+      "evidence_ids": [
+        "4:oracle"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L04-1-2",
+      "expected_answer_checklist": [
+        "Extensions decrease from 835 to 38 in that example.",
+        "The saving comes from not expanding a node again after reaching it by a no-better route."
+      ],
+      "evidence_ids": [
+        "4:extended"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L04-1-3",
+      "expected_answer_checklist": [
+        "Consistency.",
+        "In the undirected formulation shown, the absolute difference between two heuristic estimates cannot exceed the actual distance between the nodes."
+      ],
+      "evidence_ids": [
+        "4:consistency"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L04-2-1",
+      "expected_answer_checklist": [
+        "When the goal path is least-cost, all queued alternatives already cost at least as much and cannot improve through nonnegative extensions.",
+        "A newly generated goal path can coexist with cheaper unfinished paths, so discovery alone is not the same stopping condition."
+      ],
+      "evidence_ids": [
+        "4:oracle",
+        "4:stop"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L04-2-2",
+      "expected_answer_checklist": [
+        "Accumulated cost is already spent; the admissible remaining estimate does not overstate the best possible cost still needed.",
+        "Their sum supplies a lower-bound estimate of a complete route, helping prioritize promising paths and reject paths that cannot beat an incumbent."
+      ],
+      "evidence_ids": [
+        "4:heuristic"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": "For graph search that permanently closes nodes, consistency or an appropriate reopening policy also matters; do not claim admissibility alone makes every implementation correct."
+    },
+    {
+      "id": "L04-2-3",
+      "expected_answer_checklist": [
+        "It can cause a node to be expanded through a worse route before a better route is found.",
+        "The extended list then refuses the later improvement; the lecture strengthens the heuristic condition to consistency."
+      ],
+      "evidence_ids": [
+        "4:consistency"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": "Keep the implementation qualification: this is not a claim that all forms of A* fail with admissible inconsistent heuristics."
+    },
+    {
+      "id": "L04-3-1",
+      "expected_answer_checklist": [
+        "g+h scores are A=10, B=8, C=11, so the heuristic-guided choice is B.",
+        "Using g alone chooses C, whose accumulated cost is 3."
+      ],
+      "evidence_ids": [
+        "4:oracle",
+        "4:heuristic"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L04-3-2",
+      "expected_answer_checklist": [
+        "Neither route can improve on 11, so both may be pruned when any one shortest route is sufficient.",
+        "The cost-11 route could tie if its remaining edges total zero; pruning it does not enumerate every shortest route."
+      ],
+      "evidence_ids": [
+        "4:oracle",
+        "4:stop"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L04-3-3",
+      "expected_answer_checklist": [
+        "Both are admissible: 4 <= 5 and 0 <= 3.",
+        "They are not consistent on this edge because |4-0|=4 exceeds 2."
+      ],
+      "evidence_ids": [
+        "4:consistency"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L04-4-1",
+      "expected_answer_checklist": [
+        "Beam search retains only a fixed number of apparently promising paths and can discard a winning route.",
+        "Properly implemented A* uses cost plus a suitable lower-bound heuristic rather than a fixed-width cutoff; its optimality relies on the relevant heuristic/graph-search conditions."
+      ],
+      "evidence_ids": [
+        "3:beam",
+        "4:heuristic",
+        "4:consistency"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L04-4-2",
+      "expected_answer_checklist": [
+        "Both avoid work on a branch that cannot improve the decision already available.",
+        "Branch-and-bound compares route-cost bounds with a goal cost; alpha-beta compares game-value bounds under alternating maximizing and minimizing choices."
+      ],
+      "evidence_ids": [
+        "4:oracle",
+        "4:extended",
+        "5:pruning",
+        "5:deepening"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L04-4-3",
+      "expected_answer_checklist": [
+        "Route search estimates remaining travel cost to a goal, with lower-bound conditions relevant to optimality.",
+        "Nearest-neighbor distance or similarity compares feature representations to choose a matching example; it need not be a bound on the cost of a path."
+      ],
+      "evidence_ids": [
+        "4:heuristic",
+        "6:features",
+        "6:articles"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L05-1-1",
+      "expected_answer_checklist": [
+        "It evaluates the current board without exploring its future consequences.",
+        "King safety and pawn structure are named; features can be combined with weights in a linear scoring polynomial."
+      ],
+      "evidence_ids": [
+        "5:static"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L05-1-2",
+      "expected_answer_checklist": [
+        "The minimizing branches return 2 and 1.",
+        "The maximizing root returns 2, choosing the first branch."
+      ],
+      "evidence_ids": [
+        "5:minimax"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L05-1-3",
+      "expected_answer_checklist": [
+        "Progressive deepening; iterative deepening is an acceptable equivalent term.",
+        "It is presented as an anytime approach with a completed shallower result as an insurance policy."
+      ],
+      "evidence_ids": [
+        "5:deepening"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L05-2-1",
+      "expected_answer_checklist": [
+        "The opponent controls alternate decisions and seeks to minimize the maximizing player’s value.",
+        "Values must be backed up using the correct min/max choice at each level; the maximizing player cannot force every attractive leaf."
+      ],
+      "evidence_ids": [
+        "5:minimax"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L05-2-2",
+      "expected_answer_checklist": [
+        "For the same tree and leaf evaluations, it preserves the minimax value rather than approximating it.",
+        "It avoids evaluations and even move generation in subtrees whose bounds show they cannot change the decision."
+      ],
+      "evidence_ids": [
+        "5:pruning",
+        "5:deepening"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": "Tied best moves can be selected differently; do not require an identical tie-breaking choice."
+    },
+    {
+      "id": "L05-2-3",
+      "expected_answer_checklist": [
+        "It is hard to know in advance which depth can be completed within the available time.",
+        "A completed shallower result remains available if the next deeper search cannot finish; earlier levels are relatively inexpensive compared with the deepest level."
+      ],
+      "evidence_ids": [
+        "5:work",
+        "5:deepening"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L05-3-1",
+      "expected_answer_checklist": [
+        "A returns 4, B returns 2 and C returns 6.",
+        "MAX chooses C with value 6."
+      ],
+      "evidence_ids": [
+        "5:minimax"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L05-3-2",
+      "expected_answer_checklist": [
+        "Yes: the second MIN branch can return at most 3 after seeing the first leaf.",
+        "The root already has 5, so this branch cannot improve its decision, regardless of the unknown leaf."
+      ],
+      "evidence_ids": [
+        "5:pruning"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L05-3-3",
+      "expected_answer_checklist": [
+        "Plain minimax evaluates 4^6 = 4096 leaves.",
+        "The ideal-order approximation gives 2*4^3 = 128; this is an ideal-case estimate, not a universal observed count."
+      ],
+      "evidence_ids": [
+        "5:minimax",
+        "5:work"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L05-4-1",
+      "expected_answer_checklist": [
+        "Branch-and-bound minimizes accumulated route cost and uses bounds to establish a shortest goal route.",
+        "Minimax uses backed-up board evaluations while accounting for an adversary; a good game move is not simply the shortest path to an attractive leaf."
+      ],
+      "evidence_ids": [
+        "4:stop",
+        "5:static",
+        "5:minimax"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L05-4-2",
+      "expected_answer_checklist": [
+        "Beam search imposes a width cutoff based on heuristic ranking and can discard the best solution.",
+        "Alpha-beta removes branches proven unable to change the minimax value for the same search horizon and evaluations."
+      ],
+      "evidence_ids": [
+        "3:beam",
+        "5:pruning",
+        "5:deepening"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L05-4-3",
+      "expected_answer_checklist": [
+        "A game tree branches on possible moves, alternates players and backs up adversarial values.",
+        "An identification tree branches on observed test outcomes and reaches a class label; it follows the input’s outcomes rather than optimizing against an opponent."
+      ],
+      "evidence_ids": [
+        "5:minimax",
+        "7:tests",
+        "7:rules"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L06-1-1",
+      "expected_answer_checklist": [
+        "Total cover area, including the hole area.",
+        "Hole area; the two measurements place each cover in a feature space."
+      ],
+      "evidence_ids": [
+        "6:features"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L06-1-2",
+      "expected_answer_checklist": [
+        "Wired and Town and Country.",
+        "Computer and hack, including variants such as hacker/hacking; hack can refer to different subject matter in the two magazines."
+      ],
+      "evidence_ids": [
+        "6:articles"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L06-1-3",
+      "expected_answer_checklist": [
+        "The torques on the two motors.",
+        "Those records associate observed motion states with the torques used to produce them."
+      ],
+      "evidence_ids": [
+        "6:robot"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L06-2-1",
+      "expected_answer_checklist": [
+        "The short query has small counts, so vector length can dominate distance even when subject matter differs.",
+        "Cosine/angle comparison emphasizes relative direction through a normalized dot product rather than raw magnitude."
+      ],
+      "evidence_ids": [
+        "6:articles"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L06-2-2",
+      "expected_answer_checklist": [
+        "It puts feature spreads on comparable scales, giving each transformed feature unit variance.",
+        "It does not establish which features matter; irrelevant features can still distort the comparison."
+      ],
+      "evidence_ids": [
+        "6:scaling"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L06-2-3",
+      "expected_answer_checklist": [
+        "The supplied measurements may lack information about the target.",
+        "A learning procedure cannot reliably recover a relationship that the available features do not contain; feature relevance must be checked."
+      ],
+      "evidence_ids": [
+        "6:scaling"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L06-3-1",
+      "expected_answer_checklist": [
+        "Distances are sqrt(10) to A and sqrt(2) to B.",
+        "The classifier chooses B."
+      ],
+      "evidence_ids": [
+        "6:features"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L06-3-2",
+      "expected_answer_checklist": [
+        "Euclidean distance selects B: distances are sqrt(162) to A and 1 to B.",
+        "Cosine selects A: similarities are 1 and 1/sqrt(2), respectively; A shares the query’s direction despite its larger magnitude."
+      ],
+      "evidence_ids": [
+        "6:articles"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L06-3-3",
+      "expected_answer_checklist": [
+        "Scaled differences are 2 and 2; the distance is sqrt(8).",
+        "The dimensions now contribute equally to squared distance, whereas raw units let x dominate."
+      ],
+      "evidence_ids": [
+        "6:scaling"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L06-4-1",
+      "expected_answer_checklist": [
+        "The numerical-distance setup needs a meaningful representation/metric; symbolic outcomes do not directly supply the same geometry.",
+        "A test tree can branch on symbolic outcomes and avoid unnecessary or expensive tests on particular paths."
+      ],
+      "evidence_ids": [
+        "6:features",
+        "7:tests"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L06-4-2",
+      "expected_answer_checklist": [
+        "Equations describe the mechanics, but practical execution also depends on friction, wear and imperfect measurements.",
+        "Recording nearby motion states and motor torques supplies a procedure for choosing actions from experience rather than relying solely on an idealized analytic calculation."
+      ],
+      "evidence_ids": [
+        "1:knowledge",
+        "6:robot"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": "Do not claim that all mathematical equations are declarative or that analytic control is impossible; the comparison concerns the particular example."
+    },
+    {
+      "id": "L06-4-3",
+      "expected_answer_checklist": [
+        "The robot uses stored observations to find nearby motion conditions and associated torques.",
+        "The autocoder learns weights and a compressed hidden representation by reconstructing inputs; it does not simply look up a stored motion record."
+      ],
+      "evidence_ids": [
+        "6:robot",
+        "9:autocoder"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L07-1-1",
+      "expected_answer_checklist": [
+        "Whether a shadow is cast and whether garlic is eaten.",
+        "Complexion and accent."
+      ],
+      "evidence_ids": [
+        "7:vampires"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L07-1-2",
+      "expected_answer_checklist": [
+        "The shadow test.",
+        "Its weighted disorder is 0.5, below the alternatives shown."
+      ],
+      "evidence_ids": [
+        "7:weighted"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": "The captions contain the stray phrase 1/5 immediately before 0.5; the stated calculation (1/2)*1 + (3/8)*0 + (1/8)*0 gives 0.5."
+    },
+    {
+      "id": "L07-1-3",
+      "expected_answer_checklist": [
+        "A path from the root to a leaf.",
+        "Tests/outcomes on that path become the conditions and the leaf label becomes the conclusion, initially giving one rule per leaf."
+      ],
+      "evidence_ids": [
+        "7:rules"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L07-2-1",
+      "expected_answer_checklist": [
+        "A test can be useful only for a subset of cases after earlier outcomes are known.",
+        "Already homogeneous subsets need no further separation, so omitting tests can reduce cost."
+      ],
+      "evidence_ids": [
+        "7:tests",
+        "7:numeric"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L07-2-2",
+      "expected_answer_checklist": [
+        "An unweighted sum treats tiny and large branches as equally influential.",
+        "Weighting measures the remaining disorder across the sample population, taking branch sizes into account."
+      ],
+      "evidence_ids": [
+        "7:weighted"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L07-2-3",
+      "expected_answer_checklist": [
+        "A threshold on one coordinate creates a boundary parallel to the other coordinate axis.",
+        "A later test applies only to samples in its existing branch/region, not to regions already separated by earlier tests."
+      ],
+      "evidence_ids": [
+        "7:numeric"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L07-3-1",
+      "expected_answer_checklist": [
+        "The balanced set has disorder 1 bit.",
+        "The pure set has disorder 0, using the limiting value 0*log2(0)=0; it is purer."
+      ],
+      "evidence_ids": [
+        "7:entropy"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L07-3-2",
+      "expected_answer_checklist": [
+        "A has (3/8)*0 + (3/8)*0 + (2/8)*1 = 0.25.",
+        "B has (4/8)*1 + (4/8)*1 = 1, so A is preferred because its remaining weighted disorder is lower."
+      ],
+      "evidence_ids": [
+        "7:entropy",
+        "7:weighted"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L07-3-3",
+      "expected_answer_checklist": [
+        "The midpoint candidates are 1.5, 3 and 4.5.",
+        "Threshold 3 separates both N examples from both P examples and gives zero disorder in each child."
+      ],
+      "evidence_ids": [
+        "7:numeric",
+        "7:entropy"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L07-4-1",
+      "expected_answer_checklist": [
+        "Values have types and meanings that constrain useful operations; a symbolic outcome is not automatically a meaningful numeric distance.",
+        "Tests such as shadow=yes/no/unknown can be handled directly by branches; arbitrary numeric codes would need an appropriate metric before distance-based comparison makes sense."
+      ],
+      "evidence_ids": [
+        "1:types",
+        "7:tests"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L07-4-2",
+      "expected_answer_checklist": [
+        "A small final representation can reduce complexity or cost.",
+        "Finding that representation is a separate training problem: the wider net can reach a solution that a small network trained from scratch fails to find in the demonstration."
+      ],
+      "evidence_ids": [
+        "7:tests",
+        "9:width"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": "The neural-net observation is about the demonstrated optimization behavior, not a theorem that wider is always better."
+    },
+    {
+      "id": "L07-4-3",
+      "expected_answer_checklist": [
+        "Identification rules map observed test outcomes to a class using a learned partition.",
+        "Choosing a chess move requires accounting for future consequences and an opponent; a current-board rule can omit those effects."
+      ],
+      "evidence_ids": [
+        "7:rules",
+        "5:static",
+        "5:minimax"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L08-1-1",
+      "expected_answer_checklist": [
+        "Add a constant input of -1.",
+        "Give that input weight w0=t, subtracting t from the summed input and shifting the decision threshold to zero."
+      ],
+      "evidence_ids": [
+        "8:smooth"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L08-1-2",
+      "expected_answer_checklist": [
+        "The logistic sigmoid, 1/(1+exp(-a)).",
+        "It approaches 1 for very large positive a and 0 for very large negative a."
+      ],
+      "evidence_ids": [
+        "8:smooth"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L08-1-3",
+      "expected_answer_checklist": [
+        "The increase to 5 produces much faster convergence in the shown trials.",
+        "At 50 the trials worsen and show instability; increasing the step size is not always beneficial."
+      ],
+      "evidence_ids": [
+        "8:training"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L08-2-1",
+      "expected_answer_checklist": [
+        "He wants improvement to mean going uphill/maximizing rather than minimizing.",
+        "Zero error remains the optimum; maximizing negative squared error and minimizing squared error seek the same fit."
+      ],
+      "evidence_ids": [
+        "8:objective"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L08-2-2",
+      "expected_answer_checklist": [
+        "Its discontinuity and flat regions do not provide the smooth, useful derivatives needed for the proposed updates.",
+        "A sigmoid supplies a differentiable transition that allows weight effects to be propagated through the network."
+      ],
+      "evidence_ids": [
+        "8:smooth"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L08-2-3",
+      "expected_answer_checklist": [
+        "Chain-rule expressions share downstream partial results.",
+        "Reusing those results across connections avoids the apparent exponential path enumeration; work follows the connections and layers instead."
+      ],
+      "evidence_ids": [
+        "8:chain",
+        "8:reuse"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L08-3-1",
+      "expected_answer_checklist": [
+        "s(0)=1/2.",
+        "s prime = s*(1-s), so s prime at 0 is 1/4."
+      ],
+      "evidence_ids": [
+        "8:smooth",
+        "8:derivative"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L08-3-2",
+      "expected_answer_checklist": [
+        "w_new = 2 + 0.1*(-0.4) = 1.96.",
+        "No; a local gradient update does not establish global optimality."
+      ],
+      "evidence_ids": [
+        "8:objective",
+        "8:smooth"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L08-3-3",
+      "expected_answer_checklist": [
+        "Multiply along the chain: (-4)*0.3*2 = -2.4.",
+        "The result combines the performance-to-output, output-to-hidden, and hidden-to-weight derivatives."
+      ],
+      "evidence_ids": [
+        "8:chain"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L08-4-1",
+      "expected_answer_checklist": [
+        "Both move through a landscape seeking a better objective value; the gradient refines the choice of direction.",
+        "The rate constant controls travel distance, and a large step can jump past a better region or across a hill rather than improve performance."
+      ],
+      "evidence_ids": [
+        "3:terrain",
+        "8:objective",
+        "8:training"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L08-4-2",
+      "expected_answer_checklist": [
+        "Search remembers already-expanded nodes to avoid re-expanding their continuations.",
+        "Backpropagation reuses computed downstream derivative contributions across weights instead of deriving every full path independently."
+      ],
+      "evidence_ids": [
+        "3:extended",
+        "8:reuse"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L08-4-3",
+      "expected_answer_checklist": [
+        "The earlier example optimizes agreement between desired and actual outputs via squared error; the later example fits class probabilities to observed labeled samples.",
+        "Both adjust parameters using derivatives to improve a chosen performance objective."
+      ],
+      "evidence_ids": [
+        "8:objective",
+        "9:probability"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L09-1-1",
+      "expected_answer_checklist": [
+        "Cheetah, zebra and giraffe.",
+        "Their shadow heights supply the input information."
+      ],
+      "evidence_ids": [
+        "9:autocoder",
+        "9:width"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L09-1-2",
+      "expected_answer_checklist": [
+        "The illustration uses an image about 256 by 256 and a local window about 10 by 10.",
+        "Max pooling takes maxima over local neighborhoods of the resulting activations."
+      ],
+      "evidence_ids": [
+        "9:vision"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": "These are the lecture’s illustrative dimensions, not universal CNN requirements."
+    },
+    {
+      "id": "L09-1-3",
+      "expected_answer_checklist": [
+        "The trained network can be reduced and retrained down to two per column while retaining a solution.",
+        "Starting the narrow network from scratch fails to find the solution in the shown demonstration, getting trapped in poor optimization behavior."
+      ],
+      "evidence_ids": [
+        "9:width"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L09-2-1",
+      "expected_answer_checklist": [
+        "A smaller hidden layer forces the data through a bottleneck.",
+        "Successful reconstruction requires a useful compact representation of regularities rather than an unrestricted identity copy."
+      ],
+      "evidence_ids": [
+        "9:autocoder"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": "This describes the lecture’s bottleneck model; do not assume every autoencoder automatically learns meaningful generalization."
+    },
+    {
+      "id": "L09-2-2",
+      "expected_answer_checklist": [
+        "Top-one requires the correct label to rank first.",
+        "Top-five also accepts it at ranks two through five, so a top-one mistake can still be a top-five success."
+      ],
+      "evidence_ids": [
+        "9:vision"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L09-2-3",
+      "expected_answer_checklist": [
+        "A system can respond to local visual evidence or texture and still label/caption an image convincingly.",
+        "Errors and unfamiliar-looking images that retain the same predicted class show that successful labels do not establish the same perception or understanding as a person."
+      ],
+      "evidence_ids": [
+        "9:meaning"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L09-3-1",
+      "expected_answer_checklist": [
+        "It returns 4.",
+        "That value alone does not preserve the other activations or their arrangement within the window."
+      ],
+      "evidence_ids": [
+        "9:vision"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L09-3-2",
+      "expected_answer_checklist": [
+        "Rank four is a top-one failure but a top-five success.",
+        "Rank six is a failure under both criteria."
+      ],
+      "evidence_ids": [
+        "9:vision"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L09-3-3",
+      "expected_answer_checklist": [
+        "The positive example contributes 0.8; the negative example contributes 1-0.3=0.7.",
+        "Under the stated independence assumption, their product is 0.56."
+      ],
+      "evidence_ids": [
+        "9:probability"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": "The independence assumption and numbers are supplied for this new exercise; the transcript motivates the per-label probabilities."
+    },
+    {
+      "id": "L09-4-1",
+      "expected_answer_checklist": [
+        "The compared features would be learned compressed representations rather than fixed raw word counts.",
+        "The distance/similarity measure and feature scaling still matter; a learned representation alone does not guarantee relevant neighbors."
+      ],
+      "evidence_ids": [
+        "9:autocoder",
+        "6:articles",
+        "6:scaling"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": "This proposes a combination of the lecture ideas, not a system claimed to have been demonstrated."
+    },
+    {
+      "id": "L09-4-2",
+      "expected_answer_checklist": [
+        "The network demonstration shows a useful empirical change in optimization behavior, not a general guarantee of a global solution.",
+        "The SVM discussion relies on the convex structure of its standard optimization problem to rule out suboptimal local optima."
+      ],
+      "evidence_ids": [
+        "9:width",
+        "10:kernel"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": "Distinguish optimization guarantees from test-set accuracy or guaranteed feasibility of a hard-margin problem."
+    },
+    {
+      "id": "L09-4-3",
+      "expected_answer_checklist": [
+        "The broad view includes models of thinking, perception and action and their interactions.",
+        "A successful labeling/captioning output demonstrates a narrower capability; it does not by itself show the wider understanding or interconnected abilities."
+      ],
+      "evidence_ids": [
+        "2:scope",
+        "2:perception",
+        "9:meaning"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L10-1-1",
+      "expected_answer_checklist": [
+        "w is perpendicular to the boundary.",
+        "The decision checks the sign of w dot u + b; the lecture assigns a nonnegative result to the positive side."
+      ],
+      "evidence_ids": [
+        "10:boundary"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L10-1-2",
+      "expected_answer_checklist": [
+        "In w = sum_i alpha_i*y_i*x_i, a zero alpha contributes nothing to w.",
+        "Only samples with nonzero coefficients contribute to this representation of the decision boundary."
+      ],
+      "evidence_ids": [
+        "10:weights"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L10-1-3",
+      "expected_answer_checklist": [
+        "Dot products between sample vectors, and between a sample and an unknown vector.",
+        "A kernel supplies the corresponding dot products in a transformed feature space without requiring that transformation to be explicitly constructed."
+      ],
+      "evidence_ids": [
+        "10:kernel"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L10-2-1",
+      "expected_answer_checklist": [
+        "The full street width is 2/||w|| under that scaling.",
+        "Reducing the norm increases the width while the classification constraints must remain satisfied."
+      ],
+      "evidence_ids": [
+        "10:boundary",
+        "10:margin"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L10-2-2",
+      "expected_answer_checklist": [
+        "A linear hard-margin boundary may not exist for those data in the current representation.",
+        "That is a feasibility/representation limitation; the standard convex optimization property does not make impossible linear separation possible."
+      ],
+      "evidence_ids": [
+        "10:kernel"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L10-2-3",
+      "expected_answer_checklist": [
+        "It evaluates inner products phi(x) dot phi(z) through a kernel K(x,z).",
+        "Because the optimization and prediction formulas depend on those products, they can operate through K instead of explicit transformed vectors."
+      ],
+      "evidence_ids": [
+        "10:kernel"
+      ],
+      "answer_origin": "transcript-grounded explanation",
+      "grading_note": ""
+    },
+    {
+      "id": "L10-3-1",
+      "expected_answer_checklist": [
+        "u has score 4-1-1=2, so it is positive.",
+        "v has score 0-2-1=-3, so it is negative."
+      ],
+      "evidence_ids": [
+        "10:boundary"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L10-3-2",
+      "expected_answer_checklist": [
+        "Their widths are 2/5=0.4 and 2/2=1.",
+        "The norm-2 separator is preferred because its feasible margin is wider."
+      ],
+      "evidence_ids": [
+        "10:margin"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": ""
+    },
+    {
+      "id": "L10-3-3",
+      "expected_answer_checklist": [
+        "u dot v = 2, giving K=(2+1)^2=9.",
+        "No; the kernel directly supplies the transformed-space inner product."
+      ],
+      "evidence_ids": [
+        "10:kernel"
+      ],
+      "answer_origin": "new worked scenario",
+      "grading_note": "This is a polynomial kernel example. The captions call the powered expression linear; do not require that erroneous label."
+    },
+    {
+      "id": "L10-4-1",
+      "expected_answer_checklist": [
+        "Nearest-neighbor document retrieval normalizes a dot product by vector norms to compare directions.",
+        "The SVM uses weighted sample/query inner products plus an offset to determine the side of a learned boundary; sharing an operation does not make the algorithms identical."
+      ],
+      "evidence_ids": [
+        "6:articles",
+        "10:boundary",
+        "10:kernel"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L10-4-2",
+      "expected_answer_checklist": [
+        "Single-feature tree splits create axis-aligned boundaries that apply within the relevant branch regions.",
+        "A linear SVM boundary is determined by its weight vector and can be oblique; its maximum-margin partition need not match the tree."
+      ],
+      "evidence_ids": [
+        "7:numeric",
+        "10:boundary"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    },
+    {
+      "id": "L10-4-3",
+      "expected_answer_checklist": [
+        "The sigmoid network adjusts weights to improve its chosen output-fit performance and passes weighted sums through a smooth activation.",
+        "The SVM seeks a widest feasible separating margin and classifies by a signed decision score; that score is not automatically a calibrated probability."
+      ],
+      "evidence_ids": [
+        "8:objective",
+        "8:smooth",
+        "10:boundary",
+        "10:margin"
+      ],
+      "answer_origin": "cross-lecture synthesis",
+      "grading_note": ""
+    }
+  ]
+}

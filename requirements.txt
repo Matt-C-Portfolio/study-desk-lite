@@ -1,0 +1,8 @@
+faster-whisper==1.2.1
+youtube-transcript-api==1.2.4
+yt-dlp==2026.10.26
+psycopg[binary]==3.3.6
+onnxruntime==1.31.1
+tokenizers==0.23.3
+numpy==2.4.6
+requests==2.34.2
