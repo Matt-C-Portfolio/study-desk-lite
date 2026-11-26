@@ -1,8 +1,8 @@
 # Pipeline and architecture
 
-These describe the recorded implementation. File names in the responsibility table are
-relative to `study_desk/` unless stated otherwise. For installation, see
-[SETUP.md](SETUP.md).
+This guide describes how the code processes lectures and answers questions. File names
+in the responsibility table are relative to `study_desk/` unless stated otherwise.
+For installation, see [SETUP.md](SETUP.md).
 
 ## Study guides
 
@@ -25,26 +25,22 @@ All three models use the same transcript preparation, prompts, JSON schemas, 32K
 and temperature (0.6). Output budgets are 6,000 tokens for extraction, 16,000 for
 consolidation, 3,000 for review, and 12,000 per presentation topic. Formatting bounds
 titles to 90 characters, bodies to 1,400, captions and LaTeX to 500, and list items to
-700. Each topic produces one section. Formatting has its own checkpoint revision so
+700. Formatting has its own checkpoint revision so
 fixes can reuse earlier extraction and review. The local tokenizer measures the chat
 prompt; output is capped to remaining context with a 512-token reserve. Evidence is
-never silently truncated. Each call saves its budget. Each generation creates a fresh
-numbered run per lecture and model. Step 3 lists all attempts, including failures, with
-per-run notes and comparison results. The first completed run per lecture/model is
-selected for the graph; later runs do not replace that selection. Existing saved results
-are imported as Run 1.
+never silently truncated. Each call saves its budget.
 
-Each model has separate results. Original responses, review observations, output issues,
-and timings remain available for comparison. Review observations are advisory and never
-filter formatting input.
+Each generation creates a fresh numbered run per lecture and model. Step 3 lists all
+attempts, including failures, with notes, original responses, review observations,
+output issues, and timings. Existing saved results are imported as Run 1.
 
 `lecture_contracts.py` owns the teaching prompts and schemas. Extraction has no
 concept-count cap. Consolidation groups extracted topics by ID; local code preserves
 their original explanations, details, and examples when assembling the groups.
-Formatting processes one topic per call, with individual checkpoints and topic-based
-progress. All organized content goes to formatting. Study notes contain the model's
-notes and lecture references; review observations stay in Comparison results. Only basic
-structure and reference checks are enforced so the app can read outputs.
+Formatting produces one section per topic, with individual checkpoints and topic-based
+progress. Review observations are advisory: all organized content goes to formatting.
+The notes contain lecture references; review observations stay in Comparison results.
+Only basic structure and reference checks are enforced so the app can read outputs.
 
 Pass timings exclude model loading. Total time includes loading and cleanup. Resumed
 passes label reused calls; cached runs are not fresh speed benchmarks. Each new attempt
@@ -84,8 +80,8 @@ timings.
 
 ## Concept graphs
 
-The Lecture graph tab builds one graph for each of 1.5B, 7B, 14B and OpenAI across the
-ten curated lectures. Each build snapshots the **first completed run** for each
+The Lecture graph tab builds a separate graph for each system. Each build snapshots
+the **first completed run** for each
 lecture/system, reading `extract-N.json` and `source.json`, not the formatted guide.
 Original statements, examples, source chunks and content hashes are retained. Bullet
 positions supply stable claim IDs; a topic with no bullets retains its gist as a labeled
@@ -101,11 +97,11 @@ directed relationship/none pairs. Code owns IDs and attaches supplied evidence c
 All original statements and examples remain attached through merges. This reduces calls
 without asking the model to classify every claim again.
 
-The same topic-based pipeline applies to all three local models, using seed 42 and the
-existing Q4 runtime. OpenAI graph generation starts only through its own Build graph
-button; its stages are Terra / Terra / Luna. Build all local graphs excludes OpenAI.
+All systems use the same topic-based pipeline. OpenAI graph generation starts only
+through its own Build graph button; its stages are Terra / Terra / Luna.
+Build all local graphs excludes OpenAI.
 Background reservations respect existing holds; a direct OpenAI build action can start a
-fresh build without resuming an old held worker. Keys remain outside the repo.
+fresh build without resuming an old held worker.
 
 PostgreSQL stores graph inputs, unchanged claims, shared evidence-span vectors,
 concepts, memberships, aliases, merge decisions and edges. Relationship links retain the
@@ -131,7 +127,7 @@ retrieval modes are described below.
 ### Transcript retrieval
 
 Transcript indexing uses the selected saved transcript for every video; see [setup
-commands](SETUP.md#6-check-and-launch). It reuses cached BGE-base-en-v1.5 passage
+commands](SETUP.md#optional-generate-new-results). It reuses cached BGE-base-en-v1.5 passage
 embeddings from graph preparation. PostgreSQL stores the selected transcript fingerprint
 and passage membership in `rag_transcript` and `rag_passage`; original graph evidence is
 preserved. Removing a video cascades to its retrieval index.
@@ -139,9 +135,8 @@ preserved. Removing a video cascades to its retrieval index.
 Retrieval uses the BGE query prefix and cosine similarity across all indexed videos. At
 this dataset size, a NumPy dot product over PostgreSQL's stored vectors is sufficient;
 no separate vector service is needed. Results contain passage text, score, video ID,
-attribution and source links. Timestamps cover the original transcript chunk, not an
-exact sentence. Re-index after changing a transcript selection; search rejects stale
-indexed selections. No model answers or question-bank material are indexed.
+attribution and source links. Re-index after changing a transcript selection; search
+rejects stale indexed selections. No model answers or question-bank material are indexed.
 
 ### Ask Study Desk
 
@@ -155,11 +150,10 @@ index.
 
 Answers are separate saved jobs under `data/answers/<id>/`, including the question,
 prompt, original response, selected sources, graph build, seed, timing and API
-usage/cost when applicable. Local seeds default to 42; OpenAI is unseeded. All modes use
-a 3,000-token output cap. Citation warnings preserve missing/invalid citations instead
-of rewriting model output. Jobs share the existing processing lock and release local
-model memory afterward. The interface restores the most recently viewed answer after
-refresh. No question-bank answers are supplied to the model.
+usage/cost when applicable. Citation warnings preserve missing/invalid citations
+instead of rewriting model output. Jobs share the existing processing lock and release
+local model memory afterward. The interface restores the most recently viewed answer
+after refresh. No question-bank answers are supplied to the model.
 
 Graph modes use `answer-explanations-v7-budget6`; model-only and RAG use
 `answer-explanations-v5-latex`. For retrieved answers, the model returns Markdown blocks
@@ -171,5 +165,4 @@ citations. An evidence-limitation field allows unsupported questions to remain
 unanswered without invented attribution. Raw output and block mappings are saved.
 Earlier answers retain their original format.
 
-Cited sources are listed separately from other retrieved passages. Saved answers render
-as stored.
+Cited sources are listed separately from other retrieved passages.

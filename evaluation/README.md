@@ -4,10 +4,6 @@ This directory holds the research material for Study Desk Lite. Commands run fro
 repository root. [Setup](../docs/SETUP.md) covers installation; the [pipeline
 guide](../docs/PIPELINE.md) explains application behavior.
 
-The [recorded project demo](https://Matt-C-Portfolio.github.io/study-desk-lite/) presents
-this corpus and its saved results without installation. Its library and charts come from
-the same bundled snapshot below; opening the site does not run models or make API calls.
-
 ## Dataset and configurations
 
 - Ten curated MIT OpenCourseWare computing lectures, listed in [lecture-presets.json](../lecture-presets.json).
@@ -27,9 +23,8 @@ the same bundled snapshot below; opening the site does not run models or make AP
 - OpenAI Q&A used up to seven concurrent workers. Local inference was sequential;
   API and local work could overlap. Timing includes possible shared CPU contention.
 
-See [pipeline documentation](../docs/PIPELINE.md) for stage prompts, model assignments,
-output budgets, checkpoint behavior, and graph candidate selection. The source modules
-contain the exact prompts. Original failures remain part of the recorded results.
+The source modules contain the exact prompts; the pipeline guide linked above explains
+stage budgets, checkpoint behavior, and graph candidate selection.
 
 ## Included results and summary tables
 
@@ -37,8 +32,7 @@ contain the exact prompts. Original failures remain part of the recorded results
   and [export provenance](results/provenance.json).
 - [Saved example guide](../baseline/notes.md) and [settings](../baseline/settings.json).
 
-Rebuild the tables with Python's standard library; no database, model, or API is needed.
-The commands use the setup environment, but any Python 3.11 executable works:
+Rebuild the tables with Python's standard library (no database or inference needed):
 
 ```powershell
 .\.venv\Scripts\python.exe scripts/summarize_results.py
@@ -51,10 +45,9 @@ time of completed attempts with recorded timing, and estimated API cost across a
 Missing API costs are counted explicitly. Local cost entries do not measure hardware or
 electricity.
 
-The CSV export includes all 1,920 terminal attempts. It excludes credentials, absolute
-output paths, API request bodies, and generated answer text.
-`evaluation/results/provenance.json` records the original manifest hash, pipeline
-hashes, and experiment settings.
+The CSV contains metrics for every terminal attempt; full answer text and request/response
+files are in the bundled dataset. `results/provenance.json` records the original
+manifest hash, pipeline hashes, and experiment settings.
 
 | System | Completed | Failed | Attempts |
 | --- | ---: | ---: | ---: |
@@ -88,15 +81,8 @@ references. No database password or API key is included. The snapshot omits only
 root server logs and six transient lock/temporary files, listed in the manifest.
 Downloaded videos/audio, model weights, and inference binaries are not included.
 
-After configuring PostgreSQL, load the snapshot once into an empty installation:
-
-```powershell
-.\.venv\Scripts\python.exe scripts/dataset.py restore
-```
-
-This populates the actual app library and makes the comparison's saved-answer links
-work. It requires no inference or paid request and refuses existing files or records.
-See [setup](../docs/SETUP.md#load-the-included-project) for the complete browsing path.
+Follow [setup](../docs/SETUP.md#4-load-the-included-project) to restore the snapshot
+and browse it in the app.
 
 Artifact files are restored byte for byte. Only database file references are rebased;
 historical JSON artifacts retain their original machine paths and provenance hashes.
@@ -122,11 +108,8 @@ selected transcripts. Save your transcript hashes and environment information; c
 fetched later can differ from the recorded corpus. Model versions, hardware, and runtime
 behavior can also affect results.
 
-The question bank has 30 questions in each of four categories and is a project
-evaluation set, not an independently validated benchmark. Its reference materials remain
-separate from the retrieval index. See the [question-bank
-notes](question-bank-v1/README.txt) for category definitions, source hashes, and
-attribution. All 30 Connections questions use multiple lectures.
+The [question-bank notes](question-bank-v1/README.txt) describe its four categories,
+source material, attribution, and limitations as a project evaluation set.
 
 To export metrics from the restored original manifest:
 
@@ -134,10 +117,8 @@ To export metrics from the restored original manifest:
 .\.venv\Scripts\python.exe scripts/summarize_results.py --export-from data/experiments/qa-full-v1/manifest.json --output ..\exported-results
 ```
 
-This writes a separate export without modifying the original manifest or launching
-generation. Fresh experiments should use a separate output directory and be labeled
-separately from the included results. Use `--output` with the table-only command as well
-if you want to keep the included summary untouched.
+Use a separate output directory for fresh experiments and label them separately from
+the recorded results. Both summary commands accept `--output` to preserve existing tables.
 
 ## Historical runners
 
